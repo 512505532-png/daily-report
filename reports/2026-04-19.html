@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>未成年人动态日报 · 2026-04-19</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&display=swap');
+:root {
+  --bg: #f0f4f8;
+  --card-bg: #ffffff;
+  --text-main: #1a2e3d;
+  --text-sub: #4a6b7f;
+  --text-muted: #8ba3b5;
+  --blue: #1890ff;
+  --blue-dark: #0d47a1;
+  --teal: #36cfc9;
+  --red: #dc2626;
+  --green: #10b981;
+  --amber: #d97706;
+  --purple: #7c3aed;
+  --border: #e2e8f0;
+  --shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  background: var(--bg);
+  color: var(--text-main);
+  line-height: 1.7;
+  margin: 0; padding: 0;
+}
+.container { max-width: 900px; margin: 0 auto; padding: 0 16px; }
+
+/* ══ Header ══ */
+.report-header {
+  background: linear-gradient(135deg, #0d47a1 0%, #1890ff 50%, #36cfc9 100%);
+  color: #fff;
+  text-align: center;
+  padding: 36px 20px 28px;
+  position: relative;
+}
+.report-header::after {
+  content: '';
+  position: absolute; bottom: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #0d47a1, #1890ff, #36cfc9, #1890ff, #0d47a1);
+}
+.report-header h1 {
+  font-size: 24px; font-weight: 700;
+  margin-bottom: 6px; letter-spacing: .05em;
+}
+.report-header .subtitle {
+  font-size: 14px; color: rgba(255,255,255,.7);
+  margin-bottom: 12px;
+}
+.report-header .legend {
+  font-size: 11px; color: rgba(255,255,255,.5);
+}
+.report-header .legend .tag-demo {
+  display: inline-block;
+  padding: 1px 6px; border-radius: 3px;
+  font-size: 10px; font-weight: 600; margin: 0 2px;
+}
+
+/* ══ Highlight box ══ */
+.highlight-box {
+  background: linear-gradient(135deg, #ecfdf5 0%, #f0fdf4 100%);
+  border: 1px solid #bbf7d0;
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin: 24px 0;
+}
+
+/* ══ Action Box (行动建议速览) ══ */
+.action-box {
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+  border: 1px solid #fcd34d;
+  border-left: 4px solid #f59e0b;
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin: 24px 0;
+}
+.action-box-title {
+  color: #92400e; font-weight: 700; font-size: 16px;
+  margin-bottom: 14px;
+}
+.action-table {
+  width: 100%; border-collapse: collapse;
+  margin: 0 0 12px; font-size: 13px;
+  background: #fff; border-radius: 8px; overflow: hidden;
+}
+.action-table th {
+  background: #b45309; color: #fff;
+  font-weight: 600; padding: 8px 12px; text-align: left;
+  font-size: 12px;
+}
+.action-table td {
+  padding: 8px 12px; border-bottom: 1px solid #fde68a;
+  color: #78350f; font-size: 13px;
+}
+.action-table tr.action-urgent td { background: #fef2f2; }
+.action-table tr.action-important td { background: #fffbeb; }
+.action-table tr:hover td { background: #fef9c3; }
+.action-highlights {
+  display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0;
+}
+.action-tag {
+  display: inline-block; font-size: 12px;
+  color: #92400e; background: rgba(255,255,255,.7);
+  border: 1px solid #fcd34d;
+  padding: 4px 12px; border-radius: 6px;
+  line-height: 1.5;
+}
+.action-hint {
+  font-size: 11px; color: #b45309; margin-top: 8px;
+  opacity: .7;
+}
+.highlight-title {
+  color: #166534; font-weight: 700; font-size: 16px;
+  margin-bottom: 10px;
+}
+.highlight-content {
+  color: #15803d; font-size: 14px; line-height: 1.8;
+}
+
+/* ══ Dashboard ══ */
+.dashboard {
+  display: flex; gap: 12px; margin: 20px 0 28px; flex-wrap: wrap;
+}
+.dash-item {
+  flex: 1; min-width: 120px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px; text-align: center;
+  box-shadow: var(--shadow);
+}
+.dash-num { font-size: 32px; font-weight: 700; line-height: 1.2; }
+.dash-label { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+
+/* ══ Section ══ */
+.section {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+.section-title {
+  font-size: 17px; font-weight: 700;
+  margin-bottom: 20px;
+  display: flex; align-items: center; gap: 10px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--border);
+}
+.section-icon {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 28px; height: 28px; border-radius: 6px;
+  font-size: 14px; color: #fff; flex-shrink: 0;
+}
+
+/* ══ Card ══ */
+.card {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 18px 20px;
+  margin-bottom: 16px;
+  background: #fff;
+  transition: box-shadow .2s;
+}
+.card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+.card-header { margin-bottom: 8px; }
+.card-title {
+  font-weight: 700; font-size: 15px; margin: 0;
+  color: #111827; line-height: 1.5;
+  display: flex; align-items: flex-start; gap: 6px; flex-wrap: wrap;
+}
+.card-title-link {
+  color: #111827; text-decoration: none;
+  border-bottom: 1px dashed #91caff;
+  transition: all .2s;
+}
+.card-title-link:hover {
+  color: var(--blue); border-bottom-color: var(--blue);
+  border-bottom-style: solid;
+}
+.card-num {
+  color: var(--blue); font-weight: 700; flex-shrink: 0;
+}
+.tag-new {
+  display: inline-block;
+  font-size: 10px; padding: 2px 8px; border-radius: 4px;
+  font-weight: 700; white-space: nowrap;
+  vertical-align: middle; flex-shrink: 0;
+}
+.card-meta {
+  font-size: 12px; color: var(--text-muted);
+  display: flex; gap: 12px; flex-wrap: wrap;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed var(--border);
+}
+.tag-impact { font-weight: 700; }
+.card-body { font-size: 14px; color: var(--text-sub); }
+.card-body p { margin: 6px 0; }
+.card-body ul { margin: 6px 0 6px 20px; }
+.card-body li { margin: 4px 0; }
+.card-body strong { color: var(--text-main); }
+.card-impact {
+  background: #fff7ed; color: #9a3412;
+  padding: 12px 16px; border-radius: 8px;
+  margin-top: 12px; font-size: 13px; line-height: 1.7;
+  border-left: 3px solid var(--amber);
+}
+.link-list {
+  margin-top: 12px; font-size: 12px;
+  display: flex; gap: 12px; flex-wrap: wrap;
+}
+.link-list a {
+  color: var(--blue); text-decoration: none;
+  padding: 3px 10px; border-radius: 4px;
+  border: 1px solid #e0e7ff;
+  background: #f8faff;
+  transition: all .15s;
+}
+.link-list a:hover { background: var(--blue); color: #fff; border-color: var(--blue); }
+
+/* ══ 总结/思考板块 ══ */
+.section table {
+  width: 100%; border-collapse: collapse;
+  margin: 16px 0; font-size: 13px;
+}
+.section th {
+  background: linear-gradient(135deg, var(--blue-dark), var(--blue));
+  color: #fff; font-weight: 600;
+  padding: 10px 14px; text-align: left;
+}
+.section td {
+  padding: 10px 14px; border-bottom: 1px solid var(--border);
+  color: var(--text-sub);
+}
+.section tr:hover td { background: #f8faff; }
+.section h3.sub-heading {
+  font-size: 14px; font-weight: 700;
+  color: var(--text-main);
+  margin: 18px 0 10px;
+  padding-left: 12px;
+  border-left: 3px solid var(--blue);
+}
+.section h4 {
+  font-size: 13px; font-weight: 600;
+  color: var(--text-sub); margin: 14px 0 8px;
+}
+.section p { font-size: 14px; color: var(--text-sub); margin: 6px 0; }
+.section ul { font-size: 14px; margin: 6px 0 6px 20px; }
+.section li { margin: 4px 0; color: var(--text-sub); }
+.section a { color: var(--blue); text-decoration: none; }
+.section a:hover { text-decoration: underline; }
+.section hr { border: none; height: 1px; background: var(--border); margin: 20px 0; }
+
+.thinking-section {
+  border-top: 3px solid var(--amber);
+}
+
+/* ══ Footer ══ */
+.report-footer {
+  text-align: center; font-size: 12px;
+  color: var(--text-muted);
+  padding: 28px 16px;
+  border-top: 1px solid var(--border);
+  margin-top: 12px;
+  background: #f8fafc;
+}
+.report-footer strong { color: var(--text-sub); }
+
+/* ══ Responsive ══ */
+@media (max-width: 600px) {
+  .report-header h1 { font-size: 20px; }
+  .container { padding: 0 10px; }
+  .section { padding: 16px; }
+  .card { padding: 14px; }
+  .dash-item { min-width: 90px; padding: 12px; }
+  .dash-num { font-size: 24px; }
+}
+</style>
+</head>
+<body>
+
+<header class="report-header">
+  <h1>🛡️ 未成年人网络保护 · 每日动态日报</h1>
+  <div class="subtitle">2026-04-19 周日 · 共4条动态</div>
+  <div class="legend">
+    <span class="tag-demo" style="background:#fef2f2;color:#dc2626">🔴 重大</span>
+    <span class="tag-demo" style="background:#fffbeb;color:#d97706">✦ 新增</span>
+    <span class="tag-demo" style="background:#eff6ff;color:#2563eb">🔄 跟进</span>
+    = 标签含义
+  </div>
+</header>
+
+<div class="container">
+<div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:20px 0 0;">
+  <span style="font-size:11px;color:#4a6b7f;border:1px solid #e2e8f0;padding:3px 12px;border-radius:20px;">🏢 大型互联网及游戏公司动态</span>
+  <span style="font-size:11px;color:#4a6b7f;border:1px solid #e2e8f0;padding:3px 12px;border-radius:20px;">🇨🇳 国内未保监管动态</span>
+  <span style="font-size:11px;color:#4a6b7f;border:1px solid #e2e8f0;padding:3px 12px;border-radius:20px;">🌍 国外监管及公司动态</span>
+</div>
+
+    <div class="action-box">
+      <div class="action-box-title">💡 与腾讯未保的关系及行动建议</div><table class="action-table">
+        <thead><tr><th>优先级</th><th>行动项</th><th>对应事件</th><th>截止</th></tr></thead><tbody><tr class="action-urgent">
+          <td>🔴 紧急</td>
+          <td>COPPA最终合规确认——确保北美产品在周一工作日结束前完成全部调整</td>
+          <td>4月21日</td>
+          <td></td>
+        </tr><tr class="action-important">
+          <td>🟡 重要</td>
+          <td>跟踪明日英国"AI时代的童年"峰会——实时关注政策产出</td>
+          <td>4月21日</td>
+          <td></td>
+        </tr></tbody></table><div class="action-hint">详见底部「💡 思考」板块完整分析</div></div>
+    <div class="dashboard">
+      <div class="dash-item">
+        <div class="dash-num" style="color:#dc2626">1</div>
+        <div class="dash-label">🇨🇳 国内动态</div>
+      </div>
+      <div class="dash-item">
+        <div class="dash-num" style="color:#2563eb">3</div>
+        <div class="dash-label">🌍 国际动态</div>
+      </div>
+      <div class="dash-item">
+        <div class="dash-num" style="color:#059669">4</div>
+        <div class="dash-label">📊 动态合计</div>
+      </div>
+    </div><section class="section"><div class="section-title"><span class="section-icon" style="background:#dc2626">🇨🇳</span> 国内动态 (1条)</div><div class="card" style="border-left: 4px solid #3b82f6;"><div class="card-header"><h3 class="card-title"><a href="https://www.guancha.cn/politics/2026_04_10_813204.shtml" target="_blank" class="card-title-link">1. 【持续跟踪】《AI拟人化互动服务管理办法》进入行业消化期——7月15日施行倒计时87天</a></h3></div><div class="card-meta"><span class="tag-impact" style="color:#2563eb">影响：中</span><span>综合此前报道</span><span>🔔 持续跟踪，无重大新进展</span></div><div class="card-body"><ul><li><strong>状态：</strong> 4月10日发布→4月13日集中报道→4月18日人民日报深度评论。本周末进入行业消化和自查准备阶段，预计下周起各大AI产品运营方将陆续启动合规调整。</li><li><strong>关注时间节点：</strong> 7月15日施行</li></ul><p>---</p></div><div class="link-list"><a href="https://www.guancha.cn/politics/2026_04_10_813204.shtml" target="_blank">📄 国家网信办公告</a><a href="https://news.bjd.com.cn/2026/04/18/11695750.shtml" target="_blank">📄 人民日报评论（4月18日）</a></div></div></section><section class="section"><div class="section-title"><span class="section-icon" style="background:#2563eb">🌍</span> 国际动态 (3条)</div><div class="card" style="border-left: 4px solid #3b82f6;"><div class="card-header"><h3 class="card-title"><a href="https://www.ftc.gov/legal-library/browse/rules/childrens-online-privacy-protection-rule-coppa" target="_blank" class="card-title-link">1. 【持续跟踪】COPPA新规倒计时3天——4月22日（周二）进入执法期</a></h3></div><div class="card-meta"><span class="tag-impact" style="color:#2563eb">影响：中</span><span>FTC / Davis Polk / ComplianceHub</span><span>🔔 持续跟踪（倒计时3天）</span></div><div class="card-body"><ul><li><strong>状态：</strong> 周末无新增执法信号。企业进入最后48小时冲刺阶段。</li><li><strong>下周二双线交汇：</strong> COPPA执法生效 + Roblox MDL 3166案管会（9:30 AM PST）</li></ul><p><strong>核心合规要求：</strong> 生物识别数据纳入个人信息定义、AI训练数据单独同意、数据最小化、数据保留期限、第三方共享单独同意</p><ul><li><strong>违规罚款：</strong> $50,000+/次</li></ul></div><div class="link-list"><a href="https://www.ftc.gov/legal-library/browse/rules/childrens-online-privacy-protection-rule-coppa" target="_blank">📄 FTC官方COPPA规则</a><a href="https://www.davispolk.com/insights/client-update/ftc-prioritizes-coppa-enforcement-new-compliance-obligations-take-effect" target="_blank">📄 Davis Polk分析</a></div></div><div class="card" style="border-left: 4px solid #3b82f6;"><div class="card-header"><h3 class="card-title"><a href="https://www.independent.co.uk/news/uk/home-news/childhood-age-of-ai-summit-labour-b2960379.html" target="_blank" class="card-title-link">2. 【持续跟踪】英国"AI时代的童年"峰会明日举行——斯塔默唐宁街施压后续</a></h3></div><div class="card-meta"><span class="tag-impact" style="color:#2563eb">影响：中</span><span>The Independent / BritBrief / Gov.uk</span><span>🔔 明日（4月21日周一）举行</span></div><div class="card-body"><ul><li><strong>状态：</strong> 斯塔默4月17日召见五大科技高管后，4月21日"Childhood in the Age of AI"峰会将在萨塞克斯郡Wilton Park举行。科学与技术大臣Liz Kendall主持，NSPCC等儿童保护组织参与。</li><li><strong>关注重点：</strong> 峰会是否产出具体政策建议或行业要求</li></ul></div><div class="link-list"><a href="https://www.independent.co.uk/news/uk/home-news/childhood-age-of-ai-summit-labour-b2960379.html" target="_blank">📄 Independent峰会报道</a><a href="https://britbrief.co.uk/tech/ai/ai-safety-summit-for-children-as-government-tackles-online-risks.html" target="_blank">📄 BritBrief报道</a></div></div><div class="card" style="border-left: 4px solid #3b82f6;"><div class="card-header"><h3 class="card-title"><a href="https://www.telegraph.co.uk/politics/2026/04/18/starmer-pressure-go-faster-social-media-ban/" target="_blank" class="card-title-link">3. 【持续跟踪】英国社媒禁令"乒乓"第三轮待启——上议院预计下周投票</a></h3></div><div class="card-meta"><span class="tag-impact" style="color:#2563eb">影响：中</span><span>Telegraph / House of Commons Library</span><span>🔔 持续跟踪</span></div><div class="card-body"><ul><li><strong>状态：</strong> 下议院已于4月15-16日第二次以256:150否决上议院修正案。Telegraph报道上议院准备第三次坚持。如果"乒乓"继续，整个《儿童福利与学校法案》可能因超时而失效。</li></ul><p>---</p></div><div class="link-list"><a href="https://www.telegraph.co.uk/politics/2026/04/18/starmer-pressure-go-faster-social-media-ban/" target="_blank">📄 Telegraph分析</a><a href="https://commonslibrary.parliament.uk/research-briefings/cbp-10468/" target="_blank">📄 House of Commons Library</a></div></div></section><section class="section"><div class="section-title"><span class="section-icon" style="background:#7c3aed">📈</span> 总结与趋势研判</div><table><thead><tr><th>维度</th><th>当前态势</th></tr></thead><tbody><tr><td>COPPA倒计时</td><td><strong>3天</strong>；周末无新增信号，企业进入最后48小时冲刺</td></tr><tr><td>英国峰会</td><td>明日（4月21日）"AI时代的童年"峰会，关注产出</td></tr><tr><td>英国社媒禁令</td><td>"乒乓"第三轮待启，上议院预计下周投票</td></tr><tr><td>中国AI禁令</td><td>行业消化期，7月15日施行倒计时87天</td></tr></tbody></table><p><strong>核心判断：</strong> 周六新闻淡日，但下周将是2026年儿童网络保护领域的"超级周"——周一英国AI峰会、周二COPPA生效+Roblox案管会、上议院社媒禁令第三轮投票待定。建议利用周末时间完成所有合规冲刺准备。</p><hr></section><section class="section thinking-section"><div class="section-title"><span class="section-icon" style="background:#d97706">💡</span> 思考：与腾讯成长守护平台的关系及行动建议</div><h3 class="sub-heading">本周末可推进的准备工作</h3><table><thead><tr><th>优先级</th><th>行动项</th><th>截止日期</th></tr></thead><tbody><tr><td>🔴 紧急</td><td>COPPA最终合规确认——确保北美产品在周一工作日结束前完成全部调整</td><td>4月21日</td></tr><tr><td>🟡 重要</td><td>跟踪明日英国"AI时代的童年"峰会——实时关注政策产出</td><td>4月21日</td></tr></tbody></table><hr><p><em>本日报由 WorkBuddy 自动化任务生成（历史补充），今日为周末新闻淡日，以持续跟踪事件状态更新为主。</em></p></section>
+</div>
+
+<footer class="report-footer">
+  <p><strong>🛡️ 未成年人网络保护 · 每日动态日报</strong> | 2026-04-19 周日</p>
+  <p>覆盖：游戏 · 社交 · 直播 · 短视频 · 短剧 · 智能终端 · 网络消费 七大数字场景</p>
+  <p style="margin-top:8px;color:#b0b8c1;">数据来源：公开网络信息 · 由 WorkBuddy 自动化驱动</p>
+</footer>
+
+</body>
+</html>
