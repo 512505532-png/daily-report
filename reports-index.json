@@ -1,170 +1,234 @@
 [
   {
+    "date": "2026-05-02",
+    "title": "2026-05-02 未成年人动态日报",
+    "file": "2026-05-02-未成年动态日报.html",
+    "domestic_count": 1,
+    "international_count": 3,
+    "total": 4
+  },
+  {
     "date": "2026-05-01",
-    "file": "2026-05-01.html",
-    "summary": "1. 【重大·新】欧盟委员会认定Meta违反DSA——Facebook/Instagram未能阻止13岁以下儿童访问（初步裁定）",
-    "count": 4
+    "title": "2026-05-01 未成年人动态日报",
+    "file": "2026-05-01-未成年动态日报.html",
+    "domestic_count": 0,
+    "international_count": 4,
+    "total": 4
   },
   {
     "date": "2026-04-30",
-    "file": "2026-04-30.html",
-    "summary": "1. 【新】中央网信办明确将未成年人列为\"好网民工程\"三大重点群体之首——2026中国网络文明大会5月19日南宁举办，AI赋能未成年人保护成核心议题",
-    "count": 5
+    "title": "2026-04-30 未成年人动态日报",
+    "file": "2026-04-30-未成年动态日报.html",
+    "domestic_count": 2,
+    "international_count": 3,
+    "total": 5
   },
   {
     "date": "2026-04-29",
-    "file": "2026-04-29.html",
-    "summary": "1. 【跟进】B站诉绕过防沉迷案持续发酵——央视新闻+第一财经+澎湃同步深度报道，\"民事司法护城河\"效应扩散",
-    "count": 5
+    "title": "2026-04-29 未成年人动态日报",
+    "file": "2026-04-29-未成年动态日报.html",
+    "domestic_count": 2,
+    "international_count": 3,
+    "total": 5
   },
   {
     "date": "2026-04-28",
-    "file": "2026-04-28.html",
-    "summary": "1. 【新·重大】游戏公司绕过防沉迷被判赔80万元——全国首例平台诉第三方突破实名认证案",
-    "count": 5
+    "title": "2026-04-28 未成年人动态日报",
+    "file": "2026-04-28-未成年动态日报.html",
+    "domestic_count": 2,
+    "international_count": 3,
+    "total": 5
   },
   {
     "date": "2026-04-27",
-    "file": "2026-04-27.html",
-    "summary": "1. 【跟进·重大】联合国儿童基金会（UNICEF）正式祝贺中国《AI拟人化互动办法》——\"全球开创性监管措施\"",
-    "count": 4
+    "title": "2026-04-27 未成年人动态日报",
+    "file": "2026-04-27-未成年动态日报.html",
+    "domestic_count": 2,
+    "international_count": 2,
+    "total": 4
   },
   {
     "date": "2026-04-26",
-    "file": "2026-04-26.html",
-    "summary": "1. 【跟进·热搜】8岁女孩游戏退款后再充5万被拒——\"退款后重复充值\"家长责任边界引爆舆论",
-    "count": 5
+    "title": "2026-04-26 未成年人动态日报",
+    "file": "2026-04-26-未成年动态日报.html",
+    "domestic_count": 2,
+    "international_count": 3,
+    "total": 5
   },
   {
     "date": "2026-04-25",
-    "file": "2026-04-25.html",
-    "summary": "1. 【新·重要】人民日报海外版系统回顾《网络信息分类办法》施行近两月成效——\"四类31种灰色信息\"治理实操全景",
-    "count": 5
+    "title": "2026-04-25 未成年人动态日报",
+    "file": "2026-04-25-未成年动态日报.html",
+    "domestic_count": 1,
+    "international_count": 4,
+    "total": 5
   },
   {
     "date": "2026-04-24",
-    "file": "2026-04-24.html",
-    "summary": "1. 【新·重大】英国上议院4月23日第四轮辩论——乒乓加速收尾，法案预计5月第一周通过",
-    "count": 4
+    "title": "2026-04-24 未成年人动态日报",
+    "file": "2026-04-24-未成年动态日报.html",
+    "domestic_count": 0,
+    "international_count": 4,
+    "total": 4
   },
   {
     "date": "2026-04-23",
-    "file": "2026-04-23.html",
-    "summary": "1. 【新】吉林省《未成年人保护条例》发布——6月1日起施行，从\"实施办法\"升级为\"地方法规\"",
-    "count": 7
+    "title": "2026-04-23 未成年人动态日报",
+    "file": "2026-04-23-未成年动态日报.html",
+    "domestic_count": 2,
+    "international_count": 5,
+    "total": 7
   },
   {
     "date": "2026-04-22",
-    "file": "2026-04-22.html",
-    "summary": "1. 【新】人民网发布\"未成年人游戏充值退款\"典型案例解析——法院判决厘清\"金额适应性\"边界",
-    "count": 7
+    "title": "2026-04-22 未成年人动态日报",
+    "file": "2026-04-22-未成年动态日报.html",
+    "domestic_count": 2,
+    "international_count": 5,
+    "total": 7
   },
   {
     "date": "2026-04-21",
-    "file": "2026-04-21.html",
-    "summary": "1. 【持续跟踪】《AI拟人化互动服务管理办法》进入行业合规准备期——7月15日施行倒计时85天",
-    "count": 5
+    "title": "2026-04-21 未成年人动态日报",
+    "file": "2026-04-21-未成年动态日报.html",
+    "domestic_count": 1,
+    "international_count": 4,
+    "total": 5
   },
   {
     "date": "2026-04-20",
-    "file": "2026-04-20.html",
-    "summary": "1. 【跟进】人民日报发表深度评论：严禁向未成年人提供虚拟亲密关系服务——从\"法规发布\"进入\"社会讨论\"阶段",
-    "count": 6
+    "title": "2026-04-20 未成年人动态日报",
+    "file": "2026-04-20-未成年动态日报.html",
+    "domestic_count": 1,
+    "international_count": 5,
+    "total": 6
   },
   {
     "date": "2026-04-19",
-    "file": "2026-04-19.html",
-    "summary": "1. 【持续跟踪】《AI拟人化互动服务管理办法》进入行业消化期——7月15日施行倒计时87天",
-    "count": 4
+    "title": "2026-04-19 未成年人动态日报",
+    "file": "2026-04-19-未成年动态日报.html",
+    "domestic_count": 1,
+    "international_count": 3,
+    "total": 4
   },
   {
     "date": "2026-04-18",
-    "file": "2026-04-18.html",
-    "summary": "1. 【跟进】人民日报发表深度评论：严禁向未成年人提供虚拟亲密关系服务——从\"法规发布\"进入\"社会讨论\"阶段",
-    "count": 4
+    "title": "2026-04-18 未成年人动态日报",
+    "file": "2026-04-18-未成年动态日报.html",
+    "domestic_count": 1,
+    "international_count": 3,
+    "total": 4
   },
   {
     "date": "2026-04-17",
-    "file": "2026-04-17.html",
-    "summary": "1. 【跟进】直播打赏新规进入平台落实阶段——各平台一周内须完成自查自纠",
-    "count": 5
+    "title": "2026-04-17 未成年人动态日报",
+    "file": "2026-04-17-未成年动态日报.html",
+    "domestic_count": 1,
+    "international_count": 4,
+    "total": 5
   },
   {
     "date": "2026-04-16",
-    "file": "2026-04-16.html",
-    "summary": "1. 【跟进】直播打赏\"11条新规\"进入专家深度解读阶段——\"分层管理+柔性限额\"制度设计获学界认可",
-    "count": 5
+    "title": "2026-04-16 未成年人动态日报",
+    "file": "2026-04-16-未成年动态日报.html",
+    "domestic_count": 1,
+    "international_count": 4,
+    "total": 5
   },
   {
     "date": "2026-04-15",
-    "file": "2026-04-15.html",
-    "summary": "1. 【新】中网联正式启动2026年\"@芽\"未成年人网络保护公益行动计划——45个项目覆盖普法、技术治理、素养教育",
-    "count": 6
+    "title": "2026-04-15 未成年人动态日报",
+    "file": "2026-04-15-未成年动态日报.html",
+    "domestic_count": 2,
+    "international_count": 4,
+    "total": 6
   },
   {
     "date": "2026-04-14",
-    "file": "2026-04-14.html",
-    "summary": "1. 【新】中国公益研究院发布\"儿童福利2025年十大进展与2026年五大趋势\"——AI渗透儿童场景、\"未成年人模式\"全面升级入选",
-    "count": 7
+    "title": "2026-04-14 未成年人动态日报",
+    "file": "2026-04-14-未成年动态日报.html",
+    "domestic_count": 2,
+    "international_count": 5,
+    "total": 7
   },
   {
     "date": "2026-04-13",
-    "file": "2026-04-13.html",
-    "summary": "1. 【跟进】《AI拟人化互动服务管理办法》持续发酵——主流媒体集中解读未成年人保护条款",
-    "count": 6
+    "title": "2026-04-13 未成年人动态日报",
+    "file": "2026-04-13-未成年动态日报.html",
+    "domestic_count": 1,
+    "international_count": 5,
+    "total": 6
   },
   {
     "date": "2026-04-12",
-    "file": "2026-04-12.html",
-    "summary": "1. 【重磅】五部门联合公布《人工智能拟人化互动服务管理暂行办法》——禁止向未成年人提供AI虚拟伴侣",
-    "count": 6
+    "title": "2026-04-12 未成年人动态日报",
+    "file": "2026-04-12-未成年动态日报.html",
+    "domestic_count": 2,
+    "international_count": 4,
+    "total": 6
   },
   {
     "date": "2026-04-11",
-    "file": "2026-04-11.html",
-    "summary": "1. 上海一中院\"春雨护苗\"发布《网络信息分类办法》全解析——四类31种\"灰色信息\"首次明确",
-    "count": 7
+    "title": "2026-04-11 未成年人动态日报",
+    "file": "2026-04-11-未成年动态日报.html",
+    "domestic_count": 1,
+    "international_count": 6,
+    "total": 7
   },
   {
     "date": "2026-04-10",
-    "file": "2026-04-10.html",
-    "summary": "1. 最高检\"以案为鉴\"发布未成年人网络保护典型案例——聚焦电信诈骗和网络诱骗",
-    "count": 9
+    "title": "2026-04-10 未成年人动态日报",
+    "file": "2026-04-10-未成年动态日报.html",
+    "domestic_count": 1,
+    "international_count": 8,
+    "total": 9
   },
   {
     "date": "2026-04-09",
-    "file": "2026-04-09.html",
-    "summary": "1. 《可能影响未成年人身心健康的网络信息分类办法》施行满月——落地执行进入深水区",
-    "count": 6
+    "title": "2026-04-09 未成年人动态日报",
+    "file": "2026-04-09-未成年动态日报.html",
+    "domestic_count": 1,
+    "international_count": 10,
+    "total": 11
   },
   {
     "date": "2026-04-08",
-    "file": "2026-04-08.html",
-    "summary": "1. 中国社科院学者支振锋就\"社交媒体禁令\"发表专访：呼吁中国方案走自己的路",
-    "count": 7
+    "title": "2026-04-08 未成年人动态日报",
+    "file": "2026-04-08-未成年动态日报.html",
+    "domestic_count": 2,
+    "international_count": 5,
+    "total": 7
   },
   {
     "date": "2026-04-07",
-    "file": "2026-04-07.html",
-    "summary": "1. 马萨诸塞州众议院本周三投票：14岁以下全面禁用社交媒体",
-    "count": 6
+    "title": "2026-04-07 未成年人动态日报",
+    "file": "2026-04-07-未成年动态日报.html",
+    "domestic_count": 0,
+    "international_count": 6,
+    "total": 6
   },
   {
     "date": "2026-04-04",
-    "file": "2026-04-04.html",
-    "summary": "1. 夏威夷搁置青少年社媒法案——美国州级禁令遭遇宪法挑战",
-    "count": 2
+    "title": "2026-04-04 未成年人动态日报",
+    "file": "2026-04-04-未成年动态日报.html",
+    "domestic_count": 0,
+    "international_count": 2,
+    "total": 2
   },
   {
     "date": "2026-04-03",
-    "file": "2026-04-03.html",
-    "summary": "1. 《大型平台认定办法》4月1日正式施行——注册量1000万或月活100万以上平台须主动申报",
-    "count": 7
+    "title": "2026-04-03 未成年人动态日报",
+    "file": "2026-04-03-未成年动态日报.html",
+    "domestic_count": 3,
+    "international_count": 0,
+    "total": 3
   },
   {
     "date": "2026-04-02",
-    "file": "2026-04-02.html",
-    "summary": "1. 最高法发布《涉未成年人民事案件工作指引》解读——明确网络消费纠纷裁判规则",
-    "count": 6
+    "title": "2026-04-02 未成年人动态日报",
+    "file": "2026-04-02-未成年动态日报.html",
+    "domestic_count": 4,
+    "international_count": 0,
+    "total": 4
   }
 ]
