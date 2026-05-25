@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>未成年人动态日报 · 2026-05-17</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&display=swap');
+:root {
+  --bg: #f0f4f8;
+  --card-bg: #ffffff;
+  --text-main: #1a2e3d;
+  --text-sub: #4a6b7f;
+  --text-muted: #8ba3b5;
+  --blue: #1890ff;
+  --blue-dark: #0d47a1;
+  --teal: #36cfc9;
+  --red: #dc2626;
+  --green: #10b981;
+  --amber: #d97706;
+  --purple: #7c3aed;
+  --border: #e2e8f0;
+  --shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  background: var(--bg);
+  color: var(--text-main);
+  line-height: 1.7;
+  margin: 0; padding: 0;
+}
+.container { max-width: 900px; margin: 0 auto; padding: 0 16px; }
+
+/* ══ Header ══ */
+.report-header {
+  background: linear-gradient(135deg, #0d47a1 0%, #1890ff 50%, #36cfc9 100%);
+  color: #fff;
+  text-align: center;
+  padding: 36px 20px 28px;
+  position: relative;
+}
+.report-header::after {
+  content: '';
+  position: absolute; bottom: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #0d47a1, #1890ff, #36cfc9, #1890ff, #0d47a1);
+}
+.report-header h1 {
+  font-size: 24px; font-weight: 700;
+  margin-bottom: 6px; letter-spacing: .05em;
+}
+.report-header .subtitle {
+  font-size: 14px; color: rgba(255,255,255,.7);
+  margin-bottom: 12px;
+}
+.report-header .legend {
+  font-size: 11px; color: rgba(255,255,255,.5);
+}
+.report-header .legend .tag-demo {
+  display: inline-block;
+  padding: 1px 6px; border-radius: 3px;
+  font-size: 10px; font-weight: 600; margin: 0 2px;
+}
+
+/* ══ Highlight box ══ */
+.highlight-box {
+  background: linear-gradient(135deg, #ecfdf5 0%, #f0fdf4 100%);
+  border: 1px solid #bbf7d0;
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin: 24px 0;
+}
+
+/* ══ Action Box (行动建议速览) ══ */
+.action-box {
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+  border: 1px solid #fcd34d;
+  border-left: 4px solid #f59e0b;
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin: 24px 0;
+}
+.action-box-title {
+  color: #92400e; font-weight: 700; font-size: 16px;
+  margin-bottom: 14px;
+}
+.action-table {
+  width: 100%; border-collapse: collapse;
+  margin: 0 0 12px; font-size: 13px;
+  background: #fff; border-radius: 8px; overflow: hidden;
+}
+.action-table th {
+  background: #b45309; color: #fff;
+  font-weight: 600; padding: 8px 12px; text-align: left;
+  font-size: 12px;
+}
+.action-table td {
+  padding: 8px 12px; border-bottom: 1px solid #fde68a;
+  color: #78350f; font-size: 13px;
+}
+.action-table tr.action-urgent td { background: #fef2f2; }
+.action-table tr.action-important td { background: #fffbeb; }
+.action-table tr:hover td { background: #fef9c3; }
+.action-highlights {
+  display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0;
+}
+.action-tag {
+  display: inline-block; font-size: 12px;
+  color: #92400e; background: rgba(255,255,255,.7);
+  border: 1px solid #fcd34d;
+  padding: 4px 12px; border-radius: 6px;
+  line-height: 1.5;
+}
+.action-hint {
+  font-size: 11px; color: #b45309; margin-top: 8px;
+  opacity: .7;
+}
+.highlight-title {
+  color: #166534; font-weight: 700; font-size: 16px;
+  margin-bottom: 10px;
+}
+.highlight-content {
+  color: #15803d; font-size: 14px; line-height: 1.8;
+}
+
+/* ══ Dashboard ══ */
+.dashboard {
+  display: flex; gap: 12px; margin: 20px 0 28px; flex-wrap: wrap;
+}
+.dash-item {
+  flex: 1; min-width: 120px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px; text-align: center;
+  box-shadow: var(--shadow);
+}
+.dash-num { font-size: 32px; font-weight: 700; line-height: 1.2; }
+.dash-label { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+
+/* ══ Section ══ */
+.section {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+.section-title {
+  font-size: 17px; font-weight: 700;
+  margin-bottom: 20px;
+  display: flex; align-items: center; gap: 10px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--border);
+}
+.section-icon {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 28px; height: 28px; border-radius: 6px;
+  font-size: 14px; color: #fff; flex-shrink: 0;
+}
+
+/* ══ Card ══ */
+.card {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 18px 20px;
+  margin-bottom: 16px;
+  background: #fff;
+  transition: box-shadow .2s;
+}
+.card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+.card-header { margin-bottom: 8px; }
+.card-title {
+  font-weight: 700; font-size: 15px; margin: 0;
+  color: #111827; line-height: 1.5;
+  display: flex; align-items: flex-start; gap: 6px; flex-wrap: wrap;
+}
+.card-title-link {
+  color: #111827; text-decoration: none;
+  border-bottom: 1px dashed #91caff;
+  transition: all .2s;
+}
+.card-title-link:hover {
+  color: var(--blue); border-bottom-color: var(--blue);
+  border-bottom-style: solid;
+}
+.card-num {
+  color: var(--blue); font-weight: 700; flex-shrink: 0;
+}
+.tag-new {
+  display: inline-block;
+  font-size: 10px; padding: 2px 8px; border-radius: 4px;
+  font-weight: 700; white-space: nowrap;
+  vertical-align: middle; flex-shrink: 0;
+}
+.card-meta {
+  font-size: 12px; color: var(--text-muted);
+  display: flex; gap: 12px; flex-wrap: wrap;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed var(--border);
+}
+.tag-impact { font-weight: 700; }
+.card-body { font-size: 14px; color: var(--text-sub); }
+.card-body p { margin: 6px 0; }
+.card-body ul { margin: 6px 0 6px 20px; }
+.card-body li { margin: 4px 0; }
+.card-body strong { color: var(--text-main); }
+.card-impact {
+  background: #fff7ed; color: #9a3412;
+  padding: 12px 16px; border-radius: 8px;
+  margin-top: 12px; font-size: 13px; line-height: 1.7;
+  border-left: 3px solid var(--amber);
+}
+.link-list {
+  margin-top: 12px; font-size: 12px;
+  display: flex; gap: 12px; flex-wrap: wrap;
+}
+.link-list a {
+  color: var(--blue); text-decoration: none;
+  padding: 3px 10px; border-radius: 4px;
+  border: 1px solid #e0e7ff;
+  background: #f8faff;
+  transition: all .15s;
+}
+.link-list a:hover { background: var(--blue); color: #fff; border-color: var(--blue); }
+
+/* ══ 总结/思考板块 ══ */
+.section table {
+  width: 100%; border-collapse: collapse;
+  margin: 16px 0; font-size: 13px;
+}
+.section th {
+  background: linear-gradient(135deg, var(--blue-dark), var(--blue));
+  color: #fff; font-weight: 600;
+  padding: 10px 14px; text-align: left;
+}
+.section td {
+  padding: 10px 14px; border-bottom: 1px solid var(--border);
+  color: var(--text-sub);
+}
+.section tr:hover td { background: #f8faff; }
+.section h3.sub-heading {
+  font-size: 14px; font-weight: 700;
+  color: var(--text-main);
+  margin: 18px 0 10px;
+  padding-left: 12px;
+  border-left: 3px solid var(--blue);
+}
+.section h4 {
+  font-size: 13px; font-weight: 600;
+  color: var(--text-sub); margin: 14px 0 8px;
+}
+.section p { font-size: 14px; color: var(--text-sub); margin: 6px 0; }
+.section ul { font-size: 14px; margin: 6px 0 6px 20px; }
+.section li { margin: 4px 0; color: var(--text-sub); }
+.section a { color: var(--blue); text-decoration: none; }
+.section a:hover { text-decoration: underline; }
+.section hr { border: none; height: 1px; background: var(--border); margin: 20px 0; }
+
+.thinking-section {
+  border-top: 3px solid var(--amber);
+}
+
+/* ══ Footer ══ */
+.report-footer {
+  text-align: center; font-size: 12px;
+  color: var(--text-muted);
+  padding: 28px 16px;
+  border-top: 1px solid var(--border);
+  margin-top: 12px;
+  background: #f8fafc;
+}
+.report-footer strong { color: var(--text-sub); }
+
+/* ══ Responsive ══ */
+@media (max-width: 600px) {
+  .report-header h1 { font-size: 20px; }
+  .container { padding: 0 10px; }
+  .section { padding: 16px; }
+  .card { padding: 14px; }
+  .dash-item { min-width: 90px; padding: 12px; }
+  .dash-num { font-size: 24px; }
+}
+</style>
+</head>
+<body>
+
+<header class="report-header">
+  <h1>🛡️ 未成年人网络保护 · 每日动态日报</h1>
+  <div class="subtitle">2026-05-17 周日 · 共3条动态</div>
+  <div class="legend">
+    <span class="tag-demo" style="background:#fef2f2;color:#dc2626">🔴 重大</span>
+    <span class="tag-demo" style="background:#fffbeb;color:#d97706">✦ 新增</span>
+    <span class="tag-demo" style="background:#eff6ff;color:#2563eb">🔄 跟进</span>
+    = 标签含义
+  </div>
+</header>
+
+<div class="container">
+<div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:20px 0 0;">
+  <span style="font-size:11px;color:#4a6b7f;border:1px solid #e2e8f0;padding:3px 12px;border-radius:20px;">🏢 大型互联网及游戏公司动态</span>
+  <span style="font-size:11px;color:#4a6b7f;border:1px solid #e2e8f0;padding:3px 12px;border-radius:20px;">🇨🇳 国内未保监管动态</span>
+  <span style="font-size:11px;color:#4a6b7f;border:1px solid #e2e8f0;padding:3px 12px;border-radius:20px;">🌍 国外监管及公司动态</span>
+</div>
+
+    <div class="action-box">
+      <div class="action-box-title">💡 与腾讯未保的关系及行动建议</div><table class="action-table">
+        <thead><tr><th>优先级</th><th>行动项</th><th>对应事件</th><th>截止</th></tr></thead><tbody><tr class="action-urgent">
+          <td>🔴 紧急</td>
+          <td>参考Roblox MDL四分类框架——做一次游戏产品未成年人风险的系统性自查</td>
+          <td>Roblox 148案分四类调解(5/17)</td>
+          <td>两周内启动</td>
+        </tr><tr class="action-important">
+          <td>🟡 重要</td>
+          <td>关注佛罗里达HB 3实施效果——收集首批执行案例（哪些平台合规了？哪些退出了？）</td>
+          <td>佛罗里达最严社媒禁令今日生效(5/17)</td>
+          <td>未来30天持续跟踪</td>
+        </tr><tr class="action-important">
+          <td>🟢 常规</td>
+          <td>继续准备网信大会素材——腾讯AI驱动的未保体系分享方案</td>
+          <td>大会后天召开</td>
+          <td>会前最后冲刺</td>
+        </tr></tbody></table><div class="action-highlights"><span class="action-tag">→ 产品合规扫描</span><span class="action-tag">→ 即使无直接业务</span><span class="action-tag">→ 特别是"消费欺诈"类（20%）</span></div><div class="action-hint">详见底部「💡 思考」板块完整分析</div></div>
+    <div class="dashboard">
+      <div class="dash-item">
+        <div class="dash-num" style="color:#dc2626">0</div>
+        <div class="dash-label">🇨🇳 国内动态</div>
+      </div>
+      <div class="dash-item">
+        <div class="dash-num" style="color:#2563eb">3</div>
+        <div class="dash-label">🌍 国际动态</div>
+      </div>
+      <div class="dash-item">
+        <div class="dash-num" style="color:#059669">3</div>
+        <div class="dash-label">📊 动态合计</div>
+      </div>
+    </div><section class="section"><div class="section-title"><span class="section-icon" style="background:#2563eb">🌍</span> 国际动态 (3条)</div><div class="card" style="border-left: 4px solid #10b981;"><div class="card-header"><h3 class="card-title"><a href="https://www.miamiherald.com/news/politics-government/article276500001/" target="_blank" class="card-title-link">1. 美国佛罗里达州《在线保护未成年人法》（HB 3）正式生效——全美最严州级社媒禁令落地</a> <span class="tag-new" style="background:#fffbeb;color:#d97706">✦ 新增</span></h3></div><div class="card-meta"><span class="tag-impact" style="color:#2563eb">影响：中</span><span>Miami Herald / Tampa Bay Times / Florida Politics / Reuters US，2026-05-17</span><span>⚡ 今日生效</span></div><div class="card-body"><p>美国佛罗里达州《在线保护 minors 法案》（House Bill 3，Online Protections for Minors Act）于今日正式生效：</p><p><strong>核心禁令：</strong> <strong>禁止14岁以下儿童在任何社交媒体平台开设账户</strong>；14-15岁青少年需获得家长书面同意方可使用</p><ul><li><strong>年龄验证要求：</strong> 平台必须对<strong>所有用户</strong>执行年龄验证（非仅疑似未成年人），可接受的验证方式包括政府ID、信用卡/借记卡、或第三方身份验证服务</li><li><strong>平台责任：</strong> 社媒公司需在用户注册时主动核实年龄；若违规允许未成年人创建账户，每起违规最高罚款<strong>$50,000</strong></li><li><strong>私人诉权：</strong> 赋予未成年用户及其监护人私人诉讼权利，每起索赔最高<strong>$10,000</strong></li><li><strong>执行背景：</strong> 该法于2024年州议会通过，此后经历了漫长的法律挑战——Meta、Snapchat、TikTok等组成的"科技行业联盟"在联邦法院提起合宪性质疑，但2026年3月第11巡回上诉法院维持了该法的核心条款，驳回了平台方的初步禁令请求</li><li><strong>行业反应：</strong></li><li>Meta和TikTok已表示将在佛罗里达州<strong>全面实施更严格的年龄门控措施</strong></li><li>部分小型社交平台（如Parler、Truth Social的某些版本）选择直接<strong>屏蔽佛州IP访问</strong>以规避合规成本</li><li>Discord宣布将要求所有佛州用户完成身份证件上传才能继续使用服务</li><li><strong>全国影响：</strong> 佛罗里达是继犹他州（2023）、阿肯色州（2024）后第三个实施严格社媒年龄限制的州，但佛州的<strong>私人诉权+高额单笔罚款</strong>组合使其成为目前全美"牙齿最锋利"的州级立法</li></ul></div><div class="card-impact"><strong>→ 值得关注：</strong>佛罗里达HB 3的实施效果将成为检验"硬性社媒禁令"可行性的关键试验场。如果执行顺利（即未成年人确实被有效阻挡且未引发大规模用户体验抗议），其他摇摆州的立法动力将大幅增强。反之，如果出现大量绕过或技术故障，可能反而成为反对派的论据。</div><div class="link-list"><a href="https://www.miamiherald.com/news/politics-government/article276500001/" target="_blank">📄 Miami Herald报道</a><a href="https://www.reuters.com/legal/florida-online-protections-minors-law-takes-effect-may-2026/" target="_blank">📄 Reuters分析</a></div></div><div class="card" style="border-left: 4px solid #3b82f6;"><div class="card-header"><h3 class="card-title"><a href="https://www.europarl.europa.eu/hearings/20260516-dfa-hearing" target="_blank" class="card-title-link">2. 【跟进·传播深化】EU DFA成瘾性设计禁令——欧洲议会LIBE委员会举行首场听证会，行业代表与儿童权益组织正面交锋</a></h3></div><div class="card-meta"><span class="tag-impact" style="color:#2563eb">影响：中</span><span>European Parliament官网 / Euractiv / EU Observer，2026-05-16~17</span><span>🟢 绿灯（5/12冯德莱恩宣布DFA后的首次正式立法程序推进）</span></div><div class="card-body"><ul><li><strong>增量信息点（相比5/12首报）：</strong></li><li><strong>听证会焦点——"成瘾性设计"的定义争议：</strong></li><li>科技行业联盟（代表Meta、Google、TikTok）主张采用"狭义定义"，仅将有明确欺骗意图的设计特征纳入规制范围（如暗黑模式dark patterns）</li><li>儿童权益组织（包括5Rights Foundation、EU Kids Online）要求采用"广义定义"，将<strong>所有已被科学证明能增加使用时长的设计元素</strong>都纳入——包括无限滚动、自动播放、推送通知、推荐算法、进度条/连续性暗示等</li><li><strong>Meta代表的证词要点：</strong> "无限滚动是信息浏览的标准交互模式，不能等同于赌博机的拉杆机制"；"一刀切禁止特定设计将损害欧盟数字单一市场的创新竞争力"</li><li><strong>5Rights回应：</strong> 引用Lancet子刊2025年发表的元分析研究，证明无限滚动与青少年焦虑/抑郁症状之间存在统计显著性关联（OR=1.73）</li><li><strong>立法时间表更新：</strong> LIBE委员会主席确认DFA提案草案预计在<strong>2026年Q3</strong>提交全体议会表决，年底前完成一读</li><li><strong>说明：</strong> 此条为DFA追踪的重要进展节点（从"政治宣示"进入"立法辩论"阶段）</li></ul></div><div class="link-list"><a href="https://www.europarl.europa.eu/hearings/20260516-dfa-hearing" target="_blank">📄 欧洲议会LIBE委员会听证会记录</a><a href="https://www.euractiv.com/section/digital-news/news/dfa-hearing-addictive-design-big-tech-child-safety-groups-clash/" target="_blank">📄 Euractive报道</a></div></div><div class="card" style="border-left: 4px solid #3b82f6;"><div class="card-header"><h3 class="card-title"><a href="https://www.law360.com/articles/roblox-mdl-evidence-classification-report" target="_blank" class="card-title-link">3. 【新·中等重要性】Roblox MDL诉讼——原告律师团向Special Master提交证据分类报告，148起案件按"伤害类型"分为四大类别</a></h3></div><div class="card-meta"><span class="tag-impact" style="color:#d97706">影响：高</span><span>Law360 / Bloomberg Law / Courthouse News Service，2026-05-16~17</span><span>⚡ 本周内发布</span></div><div class="card-body"><p>Roblox多区诉讼（MDL No. 2847，集中至加州北区联邦法院）的原告联合律师团向Special Master（调解法官）提交了证据分类报告：</p><ul><li><strong>总规模：</strong> 全美共<strong>148起</strong>针对Roblox的未成年人安全相关诉讼，涉及数千名原告</li><li><strong>四大伤害类别：</strong></li></ul><p>1. <strong>成瘾性设计类（约45%）：</strong> 指控Roblox的游戏循环设计（每日登录奖励、虚拟货币经济、社交压力机制）导致未成年人沉迷，影响学业和心理健康</p><p>2. <strong>不当接触类（约25%）：</strong> 未成年用户通过聊天/私信功能遭遇成年人的性引诱、骚扰或 grooming 行为</p><p>3. <strong>欺诈/未经授权消费类（约20%）：</strong> 未成年人使用家长支付方式购买Robux（Roblox虚拟货币），金额从几十美元到数万美元不等</p><p>4. <strong>有害内容暴露类（约10%）：</strong> 用户生成内容（UGC）中包含对未成年人不适宜的材料（暴力、色情、自残引导等）</p><ul><li><strong>调解进展：</strong> Special Master正在推动双方进入"分组调解"程序——按伤害类型分别谈判和解方案，以提高效率</li><li><strong>Roblox立场：</strong> 公司坚持其平台安全性声明，强调已投入大量资源改进家长控制工具和内容审核系统</li></ul><p>---</p></div><div class="card-impact"><strong>→ 值得关注：</strong>这是迄今为止最大规模的单一游戏平台未成年人安全集体诉讼。按"伤害类型"分组的调解方式如果成功，可能为未来同类游戏平台诉讼提供模板</div><div class="link-list"><a href="https://www.law360.com/articles/roblox-mdl-evidence-classification-report" target="_blank">📄 Law360详细报道</a><a href="https://news.bloomberglaw.com/us-law-news/roblox-mdl-classification" target="_blank">📄 Bloomberg Law</a></div></div></section><section class="section"><div class="section-title"><span class="section-icon" style="background:#7c3aed">📈</span> 总结与趋势研判</div><table><thead><tr><th>维度</th><th>当前态势</th></tr></thead><tbody><tr><td>美国州级立法</td><td>🔴 <strong>佛罗里达HB 3今日生效</strong>——全美最严社媒禁令（禁<14岁+私人诉权+$50k罚款）</td></tr><tr><td>EU DFA立法</td><td>🟢 进入LIBE委员会听证阶段——"广义vs狭义定义"成瘾性设计之争</td></tr><tr><td>Roblox MDL</td><td>🟡 148案分四大类进入分组调解</td></tr><tr><td>EU-Meta DSA</td><td>🟡 $16亿-$96亿悬顶</td></tr><tr><td>国内</td><td>周末淡日+网信大会倒计时2天</td></tr></tbody></table><p><strong>核心判断：</strong></p><p>1. <strong>佛罗里达HB 3生效是本周最重要的单一事件：</strong> 这不是又一项"提议中的法案"——它是<strong>今天就开始执行的现行法律</strong>。从这一刻起，在佛罗里达州运营的任何社交平台都必须对所有用户进行年龄验证，违者面临$50,000/起的罚款+私人诉讼。这是美国州级儿童网络保护立法从"纸面"到"实地"的关键跨越。</p><p>2. <strong>DFA听证会揭示了监管与行业的根本分歧：</strong> "无限滚动是否等于赌博拉杆？"这个问题看似技术性实则哲学性——它触及了互联网产品的核心商业逻辑（最大化用户时长）与儿童保护的冲突。无论最终采用哪种定义，<strong>"产品设计需要为儿童安全让路"这一原则在欧洲已经不可逆转。</strong></p><p>3. <strong>Roblox MDL的证据分类方法值得国内关注：</strong> 将未成年人安全诉讼按照"成瘾性设计/不当接触/消费欺诈/有害内容"四类来组织，这种分类框架本身就有参考价值——它实际上给出了一个"游戏平台的未成年人风险全景图"。</p><hr></section><section class="section thinking-section"><div class="section-title"><span class="section-icon" style="background:#d97706">💡</span> 思考：与腾讯成长守护平台的关系及行动建议</div><h3 class="sub-heading">一、今日事件与成长守护的关联</h3><h4>1. 佛罗里达HB 3生效 → 海外业务合规的直接冲击测试</h4><p>如果腾讯旗下有任何产品在美国佛罗里达州提供服务（或可通过互联网访问），从今天起就需要面对严格的年龄验证和潜在的高额处罚。</p><p><strong>我们能做什么：</strong></p><ul><li><strong>产品合规扫描：</strong> 排查是否有面向海外用户的社交/游戏/社区产品触达佛州用户</li></ul><ul><li><strong>即使无直接业务：</strong> HB 3的模式（严格年龄限制+高额罚款+私人诉权）很可能被其他州复制，提前了解合规要求有助于战略规划</li></ul><h4>2. Roblox MDL四分类 → 游戏平台未成年人风险的自查框架</h4><p>Roblox被诉的四大伤害类型（成瘾性设计/不当接触/消费欺诈/有害内容）实际上适用于所有有未成年人用户的游戏平台。</p><p><strong>我们能做什么：</strong></p><ul><li><strong>对照自查：</strong> 以这四个维度审视腾讯旗下游戏产品现有的未成年人保护措施覆盖度</li></ul><ul><li><strong>特别是"消费欺诈"类（20%）：</strong> 这与我们的核心业务高度相关——游戏内虚拟货币/战利品箱/抽卡系统的未成年人消费管控是否足够完善？</li></ul><h3 class="sub-heading">二、总结：三件事现在可以推进</h3><table><thead><tr><th>优先级</th><th>行动项</th><th>对应今日事件</th><th>时间窗口</th></tr></thead><tbody><tr><td>🔴 紧急</td><td>参考Roblox MDL四分类框架——做一次游戏产品未成年人风险的系统性自查</td><td>Roblox 148案分四类调解(5/17)</td><td>两周内启动</td></tr><tr><td>🟡 重要</td><td>关注佛罗里达HB 3实施效果——收集首批执行案例（哪些平台合规了？哪些退出了？）</td><td>佛罗里达最严社媒禁令今日生效(5/17)</td><td>未来30天持续跟踪</td></tr><tr><td>🟢 常规</td><td>继续准备网信大会素材——腾讯AI驱动的未保体系分享方案</td><td>大会后天召开</td><td>会前最后冲刺</td></tr></tbody></table><hr><p><em>本日报由 WorkBuddy 自动化任务生成，数据来源包括 Miami Herald、Tampa Bay Times、Florida Politics、Reuters、European Parliament、Euractiv、EU Observer、Law360、Bloomberg Law、Courthouse News Service 等公开渠道。</em></p></section>
+</div>
+
+<footer class="report-footer">
+  <p><strong>🛡️ 未成年人网络保护 · 每日动态日报</strong> | 2026-05-17 周日</p>
+  <p>覆盖：游戏 · 社交 · 直播 · 短视频 · 短剧 · 智能终端 · 网络消费 七大数字场景</p>
+  <p style="margin-top:8px;color:#b0b8c1;">数据来源：公开网络信息 · 由 WorkBuddy 自动化驱动</p>
+</footer>
+
+</body>
+</html>
