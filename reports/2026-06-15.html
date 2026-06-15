@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>未成年人动态日报 · 2026-06-15</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&display=swap');
+:root {
+  --bg: #f0f4f8;
+  --card-bg: #ffffff;
+  --text-main: #1a2e3d;
+  --text-sub: #4a6b7f;
+  --text-muted: #8ba3b5;
+  --blue: #1890ff;
+  --blue-dark: #0d47a1;
+  --teal: #36cfc9;
+  --red: #dc2626;
+  --green: #10b981;
+  --amber: #d97706;
+  --purple: #7c3aed;
+  --border: #e2e8f0;
+  --shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  background: var(--bg);
+  color: var(--text-main);
+  line-height: 1.7;
+  margin: 0; padding: 0;
+}
+.container { max-width: 900px; margin: 0 auto; padding: 0 16px; }
+
+/* ══ Header ══ */
+.report-header {
+  background: linear-gradient(135deg, #0d47a1 0%, #1890ff 50%, #36cfc9 100%);
+  color: #fff;
+  text-align: center;
+  padding: 36px 20px 28px;
+  position: relative;
+}
+.report-header::after {
+  content: '';
+  position: absolute; bottom: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #0d47a1, #1890ff, #36cfc9, #1890ff, #0d47a1);
+}
+.report-header h1 {
+  font-size: 24px; font-weight: 700;
+  margin-bottom: 6px; letter-spacing: .05em;
+}
+.report-header .subtitle {
+  font-size: 14px; color: rgba(255,255,255,.7);
+  margin-bottom: 12px;
+}
+.report-header .legend {
+  font-size: 11px; color: rgba(255,255,255,.5);
+}
+.report-header .legend .tag-demo {
+  display: inline-block;
+  padding: 1px 6px; border-radius: 3px;
+  font-size: 10px; font-weight: 600; margin: 0 2px;
+}
+
+/* ══ Highlight box ══ */
+.highlight-box {
+  background: linear-gradient(135deg, #ecfdf5 0%, #f0fdf4 100%);
+  border: 1px solid #bbf7d0;
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin: 24px 0;
+}
+
+/* ══ Action Box (行动建议速览) ══ */
+.action-box {
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+  border: 1px solid #fcd34d;
+  border-left: 4px solid #f59e0b;
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin: 24px 0;
+}
+.action-box-title {
+  color: #92400e; font-weight: 700; font-size: 16px;
+  margin-bottom: 14px;
+}
+.action-table {
+  width: 100%; border-collapse: collapse;
+  margin: 0 0 12px; font-size: 13px;
+  background: #fff; border-radius: 8px; overflow: hidden;
+}
+.action-table th {
+  background: #b45309; color: #fff;
+  font-weight: 600; padding: 8px 12px; text-align: left;
+  font-size: 12px;
+}
+.action-table td {
+  padding: 8px 12px; border-bottom: 1px solid #fde68a;
+  color: #78350f; font-size: 13px;
+}
+.action-table tr.action-urgent td { background: #fef2f2; }
+.action-table tr.action-important td { background: #fffbeb; }
+.action-table tr:hover td { background: #fef9c3; }
+.action-highlights {
+  display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0;
+}
+.action-tag {
+  display: inline-block; font-size: 12px;
+  color: #92400e; background: rgba(255,255,255,.7);
+  border: 1px solid #fcd34d;
+  padding: 4px 12px; border-radius: 6px;
+  line-height: 1.5;
+}
+.action-hint {
+  font-size: 11px; color: #b45309; margin-top: 8px;
+  opacity: .7;
+}
+.highlight-title {
+  color: #166534; font-weight: 700; font-size: 16px;
+  margin-bottom: 10px;
+}
+.highlight-content {
+  color: #15803d; font-size: 14px; line-height: 1.8;
+}
+
+/* ══ Dashboard ══ */
+.dashboard {
+  display: flex; gap: 12px; margin: 20px 0 28px; flex-wrap: wrap;
+}
+.dash-item {
+  flex: 1; min-width: 120px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px; text-align: center;
+  box-shadow: var(--shadow);
+}
+.dash-num { font-size: 32px; font-weight: 700; line-height: 1.2; }
+.dash-label { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+
+/* ══ Section ══ */
+.section {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+.section-title {
+  font-size: 17px; font-weight: 700;
+  margin-bottom: 20px;
+  display: flex; align-items: center; gap: 10px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--border);
+}
+.section-icon {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 28px; height: 28px; border-radius: 6px;
+  font-size: 14px; color: #fff; flex-shrink: 0;
+}
+
+/* ══ Card ══ */
+.card {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 18px 20px;
+  margin-bottom: 16px;
+  background: #fff;
+  transition: box-shadow .2s;
+}
+.card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+.card-header { margin-bottom: 8px; }
+.card-title {
+  font-weight: 700; font-size: 15px; margin: 0;
+  color: #111827; line-height: 1.5;
+  display: flex; align-items: flex-start; gap: 6px; flex-wrap: wrap;
+}
+.card-title-link {
+  color: #111827; text-decoration: none;
+  border-bottom: 1px dashed #91caff;
+  transition: all .2s;
+}
+.card-title-link:hover {
+  color: var(--blue); border-bottom-color: var(--blue);
+  border-bottom-style: solid;
+}
+.card-num {
+  color: var(--blue); font-weight: 700; flex-shrink: 0;
+}
+.tag-new {
+  display: inline-block;
+  font-size: 10px; padding: 2px 8px; border-radius: 4px;
+  font-weight: 700; white-space: nowrap;
+  vertical-align: middle; flex-shrink: 0;
+}
+.card-meta {
+  font-size: 12px; color: var(--text-muted);
+  display: flex; gap: 12px; flex-wrap: wrap;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed var(--border);
+}
+.tag-impact { font-weight: 700; }
+.card-body { font-size: 14px; color: var(--text-sub); }
+.card-body p { margin: 6px 0; }
+.card-body ul { margin: 6px 0 6px 20px; }
+.card-body li { margin: 4px 0; }
+.card-body strong { color: var(--text-main); }
+.card-impact {
+  background: #fff7ed; color: #9a3412;
+  padding: 12px 16px; border-radius: 8px;
+  margin-top: 12px; font-size: 13px; line-height: 1.7;
+  border-left: 3px solid var(--amber);
+}
+.link-list {
+  margin-top: 12px; font-size: 12px;
+  display: flex; gap: 12px; flex-wrap: wrap;
+}
+.link-list a {
+  color: var(--blue); text-decoration: none;
+  padding: 3px 10px; border-radius: 4px;
+  border: 1px solid #e0e7ff;
+  background: #f8faff;
+  transition: all .15s;
+}
+.link-list a:hover { background: var(--blue); color: #fff; border-color: var(--blue); }
+
+/* ══ 总结/思考板块 ══ */
+.section table {
+  width: 100%; border-collapse: collapse;
+  margin: 16px 0; font-size: 13px;
+}
+.section th {
+  background: linear-gradient(135deg, var(--blue-dark), var(--blue));
+  color: #fff; font-weight: 600;
+  padding: 10px 14px; text-align: left;
+}
+.section td {
+  padding: 10px 14px; border-bottom: 1px solid var(--border);
+  color: var(--text-sub);
+}
+.section tr:hover td { background: #f8faff; }
+.section h3.sub-heading {
+  font-size: 14px; font-weight: 700;
+  color: var(--text-main);
+  margin: 18px 0 10px;
+  padding-left: 12px;
+  border-left: 3px solid var(--blue);
+}
+.section h4 {
+  font-size: 13px; font-weight: 600;
+  color: var(--text-sub); margin: 14px 0 8px;
+}
+.section p { font-size: 14px; color: var(--text-sub); margin: 6px 0; }
+.section ul { font-size: 14px; margin: 6px 0 6px 20px; }
+.section li { margin: 4px 0; color: var(--text-sub); }
+.section a { color: var(--blue); text-decoration: none; }
+.section a:hover { text-decoration: underline; }
+.section hr { border: none; height: 1px; background: var(--border); margin: 20px 0; }
+
+.thinking-section {
+  border-top: 3px solid var(--amber);
+}
+
+/* ══ Footer ══ */
+.report-footer {
+  text-align: center; font-size: 12px;
+  color: var(--text-muted);
+  padding: 28px 16px;
+  border-top: 1px solid var(--border);
+  margin-top: 12px;
+  background: #f8fafc;
+}
+.report-footer strong { color: var(--text-sub); }
+
+/* ══ Responsive ══ */
+@media (max-width: 600px) {
+  .report-header h1 { font-size: 20px; }
+  .container { padding: 0 10px; }
+  .section { padding: 16px; }
+  .card { padding: 14px; }
+  .dash-item { min-width: 90px; padding: 12px; }
+  .dash-num { font-size: 24px; }
+}
+</style>
+</head>
+<body>
+
+<header class="report-header">
+  <h1>🛡️ 未成年人网络保护 · 每日动态日报</h1>
+  <div class="subtitle">2026-06-15 周一 · 共2条动态</div>
+  <div class="legend">
+    <span class="tag-demo" style="background:#fef2f2;color:#dc2626">🔴 重大</span>
+    <span class="tag-demo" style="background:#fffbeb;color:#d97706">✦ 新增</span>
+    <span class="tag-demo" style="background:#eff6ff;color:#2563eb">🔄 跟进</span>
+    = 标签含义
+  </div>
+</header>
+
+<div class="container">
+<div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:20px 0 0;">
+  <span style="font-size:11px;color:#4a6b7f;border:1px solid #e2e8f0;padding:3px 12px;border-radius:20px;">🏢 大型互联网及游戏公司动态</span>
+  <span style="font-size:11px;color:#4a6b7f;border:1px solid #e2e8f0;padding:3px 12px;border-radius:20px;">🇨🇳 国内未保监管动态</span>
+  <span style="font-size:11px;color:#4a6b7f;border:1px solid #e2e8f0;padding:3px 12px;border-radius:20px;">🌍 国外监管及公司动态</span>
+</div>
+
+    <div class="dashboard">
+      <div class="dash-item">
+        <div class="dash-num" style="color:#dc2626">1</div>
+        <div class="dash-label">🇨🇳 国内动态</div>
+      </div>
+      <div class="dash-item">
+        <div class="dash-num" style="color:#2563eb">1</div>
+        <div class="dash-label">🌍 国际动态</div>
+      </div>
+      <div class="dash-item">
+        <div class="dash-num" style="color:#059669">2</div>
+        <div class="dash-label">📊 动态合计</div>
+      </div>
+    </div><section class="section"><div class="section-title"><span class="section-icon" style="background:#dc2626">🇨🇳</span> 国内动态 (1条)</div><div class="card" style="border-left: 4px solid #3b82f6;"><div class="card-header"><h3 class="card-title">1. 国家网信办《移动互联网未成年人模式建设指南》全面落地解读：三方联动+整机总时长管控（新事件）</h3></div><div class="card-meta"><span class="tag-impact" style="color:#2563eb">影响：中</span><span>中国青年网</span></div><div class="card-body"><p><strong>发布时间：</strong> 2026年6月14日 02:27</p><p><strong>内容摘要：</strong></p><p>2026年6月，国家互联网信息办公室发布的《移动互联网未成年人模式建设指南》进入全面落地实施阶段，多家官方媒体发布深度解读，明确升级后的未成年人模式在防范未成年人网络沉迷、优化内容建设方面的核心变化。</p><p><strong>核心升级要点：</strong></p><p>1. <strong>覆盖范围扩大到"三方联动"</strong>：将未成年人模式建设范围从原有单一应用程序，扩大到<strong>移动智能终端、应用程序、应用程序分发平台三方联动</strong>，实现一键启动整机未成年人模式后，三方自动同步切换状态，大幅降低操作门槛。</p><p>2. <strong>时长控制实现"总量封顶"</strong>：针对此前单款应用单独计时、总时长不可控的痛点，《指南》新增家长可设置上网总时长"封顶"功能——超过设定总时长后，孩子无法继续使用相关App。针对不同年龄段设置默认推荐使用时长：</p><ul><li>不满16周岁用户：默认每日总时长不超过<strong>1小时</strong></li><li>16周岁以上不满18周岁用户：默认不超过<strong>2小时</strong></li><li>家长可根据需求自行调整时长和时段</li></ul><p>3. <strong>内容规范更严格</strong>：要求企业修改易引发沉迷的内容、功能和规则，防范外链信息风险；儿童智能手表、早教机、VR/AR可穿戴设备等面向未成年人提供服务的智能设备，也需参照指南要求，规范使用时段、时长、内容和功能。</p><p>4. <strong>便捷入口+防绕过</strong>：未成年人模式入口应设置在移动智能终端醒目位置，满足用户一键切换需求；退出需家长验证同意；模式图标始终保持在桌面醒目位置，不被卸载、冻结和隐藏。</p><p><strong>标签：</strong> `#国内政策` `#国家网信办` `#未成年人模式` `#建设指南` `#三方联动` `#终端管控`</p><p>---</p></div></div></section><section class="section"><div class="section-title"><span class="section-icon" style="background:#2563eb">🌍</span> 国际动态 (1条)</div><div class="card" style="border-left: 4px solid #3b82f6;"><div class="card-header"><h3 class="card-title">1. 英国《数字童年保护法案》即将正式公布：全面禁止16岁以下使用社媒+强制网络宵禁（新事件）</h3></div><div class="card-meta"><span class="tag-impact" style="color:#2563eb">影响：中</span><span>腾讯新闻（QQ）/ MLex</span></div><div class="card-body"><p><strong>发布时间：</strong> 2026年6月15日</p><p><strong>内容摘要：</strong></p><p>2026年6月15日（本周一），英国首相基尔·斯塔默（Keir Starmer）预计将正式公布一项极具争议性的儿童数字监管新政——《<strong>数字童年保护法案</strong>》（Digital Childhood Protection Act），是斯塔默政府上台后首个重大社会政策突破，旨在应对近年来激增的青少年心理健康危机。</p><p><strong>英国国家医疗服务体系（NHS）最新数据显示</strong>：2025年15岁以下人群因焦虑、抑郁及网络成瘾就诊人数<strong>同比上升41%</strong>，且社交媒体使用时长与症状严重程度呈显著正相关（相关系数 r=0.73）。</p><p><strong>政策核心管控规则：</strong></p><p>| 适用人群 | 管控要求 |</p><p>|----------|----------|</p><p>| <strong>16岁以下未成年人</strong> | <strong>全面禁止注册或访问</strong>主流社交媒体平台 |</p><p>| <strong>16-18岁青少年</strong> | 实施强制性"<strong>网络宵禁</strong>"：每日晚10点至次日早上6点，平台须自动切断其访问权限（含消息推送与内容加载），通过<strong>设备端+平台端双重强制执行</strong> |</p><p><strong>覆盖平台范围：</strong></p><ul><li>纳入监管：Instagram、TikTok、Snapchat等"视觉型"平台，<strong>以及Discord、Reddit等以文字/社区为核心的平台</strong></li><li>豁免：教育类平台（如BBC Bitesize、Khan Academy），以及经英国数字监管局（ODRA）认证的"安全社交空间"</li></ul><p><strong>配套约束机制：</strong></p><ul><li>平台需在<strong>2026年3月前</strong>通过ODRA的"儿童安全认证"，否则将面临<strong>最高全球营收4%的罚款</strong>，且服务会被强制下架于英国应用商店</li><li>文化大臣丽莎·南迪（Lisa Nandy）明确表示："科技巨头过去十年享受了'监管宽容期'——它们有足够时间开发年龄验证、内容过滤与使用时长管理工具，但结果令人失望"</li></ul><p><strong>政策落地挑战：</strong></p><p>1. <strong>技术绕行风险</strong>：参考澳大利亚2024年类似禁令实施后，约<strong>37%的14-16岁青少年</strong>通过父母账号、VPN、海外SIM卡规避限制</p><p>2. <strong>执行成本压力</strong>：独立机构估算全平台合规改造费用将<strong>超2.3亿英镑</strong>，中小平台或被迫退出英国市场</p><p>3. <strong>权利争议</strong>：人权组织Liberty指出政策涉嫌违反《欧洲人权公约》的言论自由、非歧视原则</p><p><strong>官方回应</strong>：南迪以"汽车安全带"类比政策逻辑："我们不会问12岁孩子'你想系安全带吗？'——我们直接装上，并确保它工作。数字世界亦当如此。"</p><p><strong>分析</strong>：该政策是继澳大利亚2025年12月全球首个社媒禁令之后，又一重量级英联邦国家跟进。与澳大利亚"平台单方责任"模式不同，英国"澳大利亚+"模式将监管延伸到<strong>设备底层</strong>（操作系统+零售商），试图从根源上堵住技术绕行漏洞。若落地，将成为全球最严社媒未成年人管控政策之一，并对欧盟、加拿大等地立法产生示范效应。</p><p><strong>标签：</strong> `#国际政策` `#英国` `#数字童年保护法案` `#社媒禁令` `#16岁以下` `#网络宵禁` `#ODRA` `#心理健康`</p><p>---</p></div></div></section><section class="section"><div class="section-title"><span class="section-icon" style="background:#7c3aed">📈</span> 总结与趋势研判</div><p><strong>6月15日动态研判：</strong></p><p>1. <strong>国内：未成年人模式从"应用级"升级到"系统级"管控</strong>：《移动互联网未成年人模式建设指南》的全面落地，标志国内未成年人网络保护进入"终端原生管控"新阶段。此前的未成年人模式主要依赖应用自身实现（如抖音、快手的青少年模式），总时长不可控、易绕过是核心痛点。此次升级通过"三方联动"（终端+应用+应用商店）和"整机总时长封顶"，从系统底层解决了这些问题。对腾讯成长守护而言，这意味着<strong>终端厂商（华为、小米、OPPO、vivo等）正在成为未成年人保护的新前沿</strong>——成长守护应主动与终端厂商合作，将守护能力嵌入终端原生未成年人模式，实现"系统级保护"而非仅仅"应用级保护"。</p><p>2. <strong>国际：全球社媒未成年人管控进入"禁令时代"</strong>：英国《数字童年保护法案》的即将公布，标志着全球未成年人网络保护立法从"平台自律+监管指导"向"立法强制禁令"跨越。澳大利亚（2025年12月）→ 英国（2026年6月）→ 很可能欧盟、加拿大、美国部分州将相继跟进。对腾讯等全球化运营的平台企业而言，<strong>必须提前布局"年龄验证+家长监护+内容过滤"的合规技术架构</strong>，以应对全球范围内日益严格的监管环境。</p><p>3. <strong>新闻淡日后的潜在爆发</strong>：今日国际国内均仅有1条重大新动态，属于典型"新闻淡日"。但英国新政将于今日（6月15日）正式公布，预计本周将有大量跟进报道、专家解读、行业反应等内容涌现，<strong>明日（6月16日）很可能迎来国际动态爆发</strong>，需重点跟踪。</p><p><strong>近期趋势延续：</strong></p><p>* 国内：《未成年人网络保护条例》深入实施，AI监管《办法》即将施行（2026年7月15日），互联网企业加速未成年人模式升级；《移动互联网未成年人模式建设指南》全面落地，终端企业和平台正进行技术升级</p><p>* 国际：英国、欧盟、美国、澳大利亚、加拿大等地持续推进未成年人网络保护立法和执法，全球监管趋严；Roblox年龄分级账号（Kids + Select）已于2026年6月初全球上线，海外平台产品级未保创新持续推进</p><hr></section><section class="section thinking-section"><div class="section-title"><span class="section-icon" style="background:#d97706">💡</span> 思考：与腾讯成长守护平台的关系及行动建议</div><h3 class="sub-heading">一、今日事件与成长守护的关联</h3><p><strong>1. 《移动互联网未成年人模式建设指南》全面落地（2026-06-14）</strong></p><p>* <strong>关联点</strong>：国家网信办发布的《指南》要求移动智能终端、应用程序、应用商店"三方联动"，实现未成年人模式的系统级管控。这意味着<strong>终端厂商正在成为未成年人保护的新前沿</strong>——华为、小米、OPPO、vivo等主流手机厂商都需要按照《指南》要求，在系统层面提供未成年人模式入口、时长管控、内容过滤等功能。对腾讯成长守护而言，这意味着<strong>守护能力的触达范围正在从"应用内"扩展到"系统级"</strong>——如果成长守护能够与终端厂商合作，将守护能力嵌入终端原生未成年人模式，将大幅提升守护覆盖面和有效性。</p><p>* <strong>成长守护可借鉴</strong>：</p><p>* 《指南》提出的"三方联动"思路值得深入跟进——成长守护是否可以联合终端厂商、应用商店，打造"终端+应用+商店"三位一体的未成年人保护体系？例如：在华为手机上开启未成年人模式后，自动同步腾讯成长守护的时长管控规则，并在应用商店中屏蔽不适合未成年人的游戏/应用下载。</p><p>* "整机总时长封顶"功能——成长守护目前主要管控腾讯系游戏和应用的时长，但《指南》要求的是<strong>全机所有应用</strong>的总时长管控。成长守护是否可以探索与终端厂商合作，将管控范围从"腾讯系"扩展到"全机级"？</p><p>* <strong>行动建议</strong>：</p><p>* <strong>即刻</strong>：组织团队深入学习《移动互联网未成年人模式建设指南》全文，特别是"移动智能终端未成年人模式要求"章节，评估成长守护在当前政策框架下的合规状态和合作机遇。</p><p>* <strong>短期（1个月内）</strong>：主动对接华为、小米、OPPO、vivo等主流终端厂商，探讨将成长守护能力嵌入终端原生未成年人模式的技术方案；重点研究"三方联动"的技术接口和标准。</p><p>* <strong>中长期</strong>：推动成长守护从"腾讯系游戏/应用管控"升级为"全机级未成年人保护平台"，通过与终端厂商、应用商店的深度合作，实现跨应用、跨平台的统一守护体验。</p><hr><p><strong>2. 英国《数字童年保护法案》即将公布（2026-06-15）</strong></p><p>* <strong>关联点</strong>：英国新政要求全面禁止16岁以下未成年人使用主流社交媒体平台，并对16-18岁青少年实施强制"网络宵禁"。这是继澳大利亚2025年12月禁令之后，全球最严社媒未成年人管控政策。<strong>对腾讯国际化业务（如PUBG Mobile、Level Infinite等游戏业务）而言，这意味着海外未成年人保护合规要求将持续收紧</strong>——虽然新政主要针对社交媒体平台，但游戏平台的未成年人保护要求也可能随之升级（如年龄验证、家长监护、时长管控等）。</p><p>* <strong>成长守护可借鉴</strong>：</p><p>* 英国新政的"设备端+平台端双重强制执行"思路值得关注——成长守护目前主要依赖"平台端"管控（如游戏内人脸识别、时长限制等），但未成年人可以通过"换设备""用父母账号"等方式绕过。是否可以探索"设备端"管控方案（如与终端厂商合作，在设备底层实现未成年人身份识别和行为管控）？</p><p>* "网络宵禁"（晚10点至早6点禁止访问）——成长守护目前也有类似功能（如"夜间防沉迷"），但可以借鉴英国新政的"双重强制执行"机制，提升绕过难度。</p><p>* <strong>行动建议</strong>：</p><p>* <strong>即刻</strong>：安排专人跟踪英国《数字童年保护法案》的正式公布内容，特别是其中关于"年龄验证""家长监护""时长管控"的具体技术要求，评估对腾讯国际化业务的潜在影响。</p><p>* <strong>短期（3个月内）</strong>：研究全球主要市场（英国、欧盟、美国、澳大利亚、加拿大）的未成年人网络保护立法趋势，提前布局"年龄验证+家长监护+内容过滤"的合规技术架构；特别是研究<strong>设备端年龄识别技术</strong>（如苹果即将推出的"儿童账号"功能），探索成长守护与设备端技术的融合方案。</p><p>* <strong>中长期</strong>：将成长守护打造成"全球合规技术平台"——不仅服务国内业务，更为腾讯国际化业务提供未成年人保护合规技术解决方案，助力业务在海外市场的合规运营。</p><hr><p><strong>日报生成时间：</strong> 2026年6月15日 10:30（自动化任务 execution）</p><p><strong>下次执行：</strong> 2026年6月16日 10:30</p></section>
+    <style>
+      .archive-section { margin-top:32px; }
+      .archive-item {
+        display:block; background:#fff;
+        border:1px solid #e2e8f0; border-left:3px solid #a78bfa;
+        border-radius:10px; padding:14px 18px;
+        text-decoration:none; color:inherit;
+        transition:border-left-color .2s, box-shadow .2s;
+      }
+      .archive-item:hover {
+        border-left-color:#7c3aed;
+        box-shadow:0 2px 8px rgba(124,58,237,.1);
+      }
+      .archive-item-date { font-size:15px; font-weight:700; color:#1a2e3d; margin-bottom:4px; }
+      .archive-item-summary { font-size:11px; color:#8ba3b5; line-height:1.4; }
+      .archive-empty { text-align:center; padding:20px; color:#8ba3b5; font-size:14px; }
+    </style>
+    <section class="archive-section">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+        <div style="flex:1;height:1px;background:linear-gradient(270deg,#7c3aed,#a78bfa);"></div>
+        <div style="font-size:15px;font-weight:700;letter-spacing:.06em;color:#5b21b0;white-space:nowrap;display:flex;align-items:center;gap:8px;">
+          <span style="display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;background:#7c3aed;border-radius:6px;font-size:12px;color:#fff;">📚</span>
+          历史存档
+        </div>
+        <div style="flex:1;height:1px;background:linear-gradient(90deg,#7c3aed,#a78bfa);"></div>
+      </div>
+      <div id="archiveList"></div>
+    </section>
+    <script>
+    (function(){
+      var wds=['周日','周一','周二','周三','周四','周五','周六'];
+      var cur='2026-06-15';
+      fetch('../reports-index.json?_='+Date.now())
+        .then(function(r){return r.json();})
+        .then(function(data){
+          var others=data.filter(function(d){return d.date!==cur;});
+          var el=document.getElementById('archiveList');
+          if(others.length===0){el.innerHTML='<div class="archive-empty">暂无更多历史报告</div>';return;}
+          var h='';
+          others.forEach(function(item){
+            var d=new Date(item.date+'T00:00:00');
+            var wd=wds[d.getDay()];
+            var sum=(item.summary||'').substring(0,60);
+            h+='<a class="archive-item" href="../reports/'+item.file+'">'
+              +'<div class="archive-item-date">'+item.date+' <span style="font-size:12px;color:#7c3aed;font-weight:600;">'+wd+'</span></div>'
+              +'<div class="archive-item-summary">'+sum+'</div>'
+              +'</a>';
+          });
+          el.innerHTML=h;
+        })
+        .catch(function(){});
+    })();
+    </script>
+  
+</div>
+
+<footer class="report-footer">
+  <p><strong>🛡️ 未成年人网络保护 · 每日动态日报</strong> | 2026-06-15 周一</p>
+  <p>覆盖：游戏 · 社交 · 直播 · 短视频 · 短剧 · 智能终端 · 网络消费 七大数字场景</p>
+  <p style="margin-top:8px;color:#b0b8c1;">数据来源：公开网络信息 · 由 WorkBuddy 自动化驱动</p>
+</footer>
+
+</body>
+</html>
