@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>未成年人动态日报 · 2026-06-18</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&display=swap');
+:root {
+  --bg: #f0f4f8;
+  --card-bg: #ffffff;
+  --text-main: #1a2e3d;
+  --text-sub: #4a6b7f;
+  --text-muted: #8ba3b5;
+  --blue: #1890ff;
+  --blue-dark: #0d47a1;
+  --teal: #36cfc9;
+  --red: #dc2626;
+  --green: #10b981;
+  --amber: #d97706;
+  --purple: #7c3aed;
+  --border: #e2e8f0;
+  --shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  background: var(--bg);
+  color: var(--text-main);
+  line-height: 1.7;
+  margin: 0; padding: 0;
+}
+.container { max-width: 900px; margin: 0 auto; padding: 0 16px; }
+
+/* ══ Header ══ */
+.report-header {
+  background: linear-gradient(135deg, #0d47a1 0%, #1890ff 50%, #36cfc9 100%);
+  color: #fff;
+  text-align: center;
+  padding: 36px 20px 28px;
+  position: relative;
+}
+.report-header::after {
+  content: '';
+  position: absolute; bottom: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #0d47a1, #1890ff, #36cfc9, #1890ff, #0d47a1);
+}
+.report-header h1 {
+  font-size: 24px; font-weight: 700;
+  margin-bottom: 6px; letter-spacing: .05em;
+}
+.report-header .subtitle {
+  font-size: 14px; color: rgba(255,255,255,.7);
+  margin-bottom: 12px;
+}
+.report-header .legend {
+  font-size: 11px; color: rgba(255,255,255,.5);
+}
+.report-header .legend .tag-demo {
+  display: inline-block;
+  padding: 1px 6px; border-radius: 3px;
+  font-size: 10px; font-weight: 600; margin: 0 2px;
+}
+
+/* ══ Highlight box ══ */
+.highlight-box {
+  background: linear-gradient(135deg, #ecfdf5 0%, #f0fdf4 100%);
+  border: 1px solid #bbf7d0;
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin: 24px 0;
+}
+
+/* ══ Action Box (行动建议速览) ══ */
+.action-box {
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+  border: 1px solid #fcd34d;
+  border-left: 4px solid #f59e0b;
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin: 24px 0;
+}
+.action-box-title {
+  color: #92400e; font-weight: 700; font-size: 16px;
+  margin-bottom: 14px;
+}
+.action-table {
+  width: 100%; border-collapse: collapse;
+  margin: 0 0 12px; font-size: 13px;
+  background: #fff; border-radius: 8px; overflow: hidden;
+}
+.action-table th {
+  background: #b45309; color: #fff;
+  font-weight: 600; padding: 8px 12px; text-align: left;
+  font-size: 12px;
+}
+.action-table td {
+  padding: 8px 12px; border-bottom: 1px solid #fde68a;
+  color: #78350f; font-size: 13px;
+}
+.action-table tr.action-urgent td { background: #fef2f2; }
+.action-table tr.action-important td { background: #fffbeb; }
+.action-table tr:hover td { background: #fef9c3; }
+.action-highlights {
+  display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0;
+}
+.action-tag {
+  display: inline-block; font-size: 12px;
+  color: #92400e; background: rgba(255,255,255,.7);
+  border: 1px solid #fcd34d;
+  padding: 4px 12px; border-radius: 6px;
+  line-height: 1.5;
+}
+.action-hint {
+  font-size: 11px; color: #b45309; margin-top: 8px;
+  opacity: .7;
+}
+.highlight-title {
+  color: #166534; font-weight: 700; font-size: 16px;
+  margin-bottom: 10px;
+}
+.highlight-content {
+  color: #15803d; font-size: 14px; line-height: 1.8;
+}
+
+/* ══ Dashboard ══ */
+.dashboard {
+  display: flex; gap: 12px; margin: 20px 0 28px; flex-wrap: wrap;
+}
+.dash-item {
+  flex: 1; min-width: 120px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px; text-align: center;
+  box-shadow: var(--shadow);
+}
+.dash-num { font-size: 32px; font-weight: 700; line-height: 1.2; }
+.dash-label { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+
+/* ══ Section ══ */
+.section {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+.section-title {
+  font-size: 17px; font-weight: 700;
+  margin-bottom: 20px;
+  display: flex; align-items: center; gap: 10px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--border);
+}
+.section-icon {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 28px; height: 28px; border-radius: 6px;
+  font-size: 14px; color: #fff; flex-shrink: 0;
+}
+
+/* ══ Card ══ */
+.card {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 18px 20px;
+  margin-bottom: 16px;
+  background: #fff;
+  transition: box-shadow .2s;
+}
+.card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+.card-header { margin-bottom: 8px; }
+.card-title {
+  font-weight: 700; font-size: 15px; margin: 0;
+  color: #111827; line-height: 1.5;
+  display: flex; align-items: flex-start; gap: 6px; flex-wrap: wrap;
+}
+.card-title-link {
+  color: #111827; text-decoration: none;
+  border-bottom: 1px dashed #91caff;
+  transition: all .2s;
+}
+.card-title-link:hover {
+  color: var(--blue); border-bottom-color: var(--blue);
+  border-bottom-style: solid;
+}
+.card-num {
+  color: var(--blue); font-weight: 700; flex-shrink: 0;
+}
+.tag-new {
+  display: inline-block;
+  font-size: 10px; padding: 2px 8px; border-radius: 4px;
+  font-weight: 700; white-space: nowrap;
+  vertical-align: middle; flex-shrink: 0;
+}
+.card-meta {
+  font-size: 12px; color: var(--text-muted);
+  display: flex; gap: 12px; flex-wrap: wrap;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed var(--border);
+}
+.tag-impact { font-weight: 700; }
+.card-body { font-size: 14px; color: var(--text-sub); }
+.card-body p { margin: 6px 0; }
+.card-body ul { margin: 6px 0 6px 20px; }
+.card-body li { margin: 4px 0; }
+.card-body strong { color: var(--text-main); }
+.card-impact {
+  background: #fff7ed; color: #9a3412;
+  padding: 12px 16px; border-radius: 8px;
+  margin-top: 12px; font-size: 13px; line-height: 1.7;
+  border-left: 3px solid var(--amber);
+}
+.link-list {
+  margin-top: 12px; font-size: 12px;
+  display: flex; gap: 12px; flex-wrap: wrap;
+}
+.link-list a {
+  color: var(--blue); text-decoration: none;
+  padding: 3px 10px; border-radius: 4px;
+  border: 1px solid #e0e7ff;
+  background: #f8faff;
+  transition: all .15s;
+}
+.link-list a:hover { background: var(--blue); color: #fff; border-color: var(--blue); }
+
+/* ══ 总结/思考板块 ══ */
+.section table {
+  width: 100%; border-collapse: collapse;
+  margin: 16px 0; font-size: 13px;
+}
+.section th {
+  background: linear-gradient(135deg, var(--blue-dark), var(--blue));
+  color: #fff; font-weight: 600;
+  padding: 10px 14px; text-align: left;
+}
+.section td {
+  padding: 10px 14px; border-bottom: 1px solid var(--border);
+  color: var(--text-sub);
+}
+.section tr:hover td { background: #f8faff; }
+.section h3.sub-heading {
+  font-size: 14px; font-weight: 700;
+  color: var(--text-main);
+  margin: 18px 0 10px;
+  padding-left: 12px;
+  border-left: 3px solid var(--blue);
+}
+.section h4 {
+  font-size: 13px; font-weight: 600;
+  color: var(--text-sub); margin: 14px 0 8px;
+}
+.section p { font-size: 14px; color: var(--text-sub); margin: 6px 0; }
+.section ul { font-size: 14px; margin: 6px 0 6px 20px; }
+.section li { margin: 4px 0; color: var(--text-sub); }
+.section a { color: var(--blue); text-decoration: none; }
+.section a:hover { text-decoration: underline; }
+.section hr { border: none; height: 1px; background: var(--border); margin: 20px 0; }
+
+.thinking-section {
+  border-top: 3px solid var(--amber);
+}
+
+/* ══ Footer ══ */
+.report-footer {
+  text-align: center; font-size: 12px;
+  color: var(--text-muted);
+  padding: 28px 16px;
+  border-top: 1px solid var(--border);
+  margin-top: 12px;
+  background: #f8fafc;
+}
+.report-footer strong { color: var(--text-sub); }
+
+/* ══ Responsive ══ */
+@media (max-width: 600px) {
+  .report-header h1 { font-size: 20px; }
+  .container { padding: 0 10px; }
+  .section { padding: 16px; }
+  .card { padding: 14px; }
+  .dash-item { min-width: 90px; padding: 12px; }
+  .dash-num { font-size: 24px; }
+}
+</style>
+</head>
+<body>
+
+<header class="report-header">
+  <h1>🛡️ 未成年人网络保护 · 每日动态日报</h1>
+  <div class="subtitle">2026-06-18 周四 · 共1条动态</div>
+  <div class="legend">
+    <span class="tag-demo" style="background:#fef2f2;color:#dc2626">🔴 重大</span>
+    <span class="tag-demo" style="background:#fffbeb;color:#d97706">✦ 新增</span>
+    <span class="tag-demo" style="background:#eff6ff;color:#2563eb">🔄 跟进</span>
+    = 标签含义
+  </div>
+</header>
+
+<div class="container">
+<div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:20px 0 0;">
+  <span style="font-size:11px;color:#4a6b7f;border:1px solid #e2e8f0;padding:3px 12px;border-radius:20px;">🏢 大型互联网及游戏公司动态</span>
+  <span style="font-size:11px;color:#4a6b7f;border:1px solid #e2e8f0;padding:3px 12px;border-radius:20px;">🇨🇳 国内未保监管动态</span>
+  <span style="font-size:11px;color:#4a6b7f;border:1px solid #e2e8f0;padding:3px 12px;border-radius:20px;">🌍 国外监管及公司动态</span>
+</div>
+
+    <div class="dashboard">
+      <div class="dash-item">
+        <div class="dash-num" style="color:#dc2626">1</div>
+        <div class="dash-label">🇨🇳 国内动态</div>
+      </div>
+      <div class="dash-item">
+        <div class="dash-num" style="color:#2563eb">0</div>
+        <div class="dash-label">🌍 国际动态</div>
+      </div>
+      <div class="dash-item">
+        <div class="dash-num" style="color:#059669">1</div>
+        <div class="dash-label">📊 动态合计</div>
+      </div>
+    </div><section class="section"><div class="section-title"><span class="section-icon" style="background:#dc2626">🇨🇳</span> 国内动态 (1条)</div><div class="card" style="border-left: 4px solid #3b82f6;"><div class="card-header"><h3 class="card-title">1. 短视频平台未成年人保护机制迎来大升级（新事件）</h3></div><div class="card-meta"><span class="tag-impact" style="color:#2563eb">影响：中</span><span>搜狐娱乐 / 各大短视频平台</span></div><div class="card-body"><p><strong>发布时间：</strong> 2026年6月17日 12:07</p><ul><li>https://yule.sohu.com/a/1037770351_100227126</li></ul><p><strong>内容摘要：</strong></p><p>随着短视频渗透日常生活，未成年人上网时长持续增加，"儿童出镜博流量、诱导孩子盲目充值打赏"等乱象不断显现。近期各大短视频平台同步升级未成年人网络保护机制，从消费拦截、内容审核、青少年模式三方面完善管控规则，全方位守护未成年人线上成长环境。</p><p><strong>四大升级亮点：</strong></p><p>1. <strong>强化消费拦截，阻断未成年人非理性打赏渠道</strong>：系统通过设备特征、操作习惯、人脸核验等多重维度识别未成年用户，在充值、打赏环节提前弹窗提醒，对疑似未成年人大额消费直接拦截。针对借用成年人账号打赏的隐蔽行为，平台新增异常消费复核机制，出现高频小额连续消费、深夜集中充值等异常行为时，会暂停付费功能并联系监护人确认。同时简化未成年消费退款通道，完善相关凭证审核流程。</p><p>2. <strong>严控不良内容，整治消费未成年人流量乱象</strong>：本次治理明确划定"消费未成年人形象内容红线"，限制刻意消费未成年人形象的视频传播。平台审核团队加大巡查力度，对恶意恶搞儿童、刻意制造冲突博眼球、未成年长时间出镜带货的账号采取限流、下架作品等处置；禁止创作者把孩子当作博取流量的工具。</p><p>3. <strong>全面优化青少年模式，完善分层管控功能</strong>：平台按照年龄划分内容梯度，低龄用户专区仅推送科普、美育、自然等正向内容，减少娱乐化、碎片化视频推送比例。时长管控功能更加细化，家长可自主设置单日上网时长、夜间使用限制，系统到点自动锁定应用。同时打通手机终端与短视频平台的联动管控，开启系统级青少年模式后，全平台统一限制充值、直播互动功能。家长后台新增使用记录查询，能够清晰查看浏览内容、互动行为。</p><p>4. <strong>多方协同，构建长效未成年人防护体系</strong>：监管部门、平台、家庭形成三方合力。监管部门持续出台配套管理办法，明确平台主体责任；各大平台持续更新识别算法，常态化开展违规账号清理；家长作为监护第一责任人，应当主动开启青少年模式。</p><p><strong>涉及平台范围：</strong> 此次升级覆盖国内主要短视频平台（抖音、快手等），是继《移动互联网未成年人模式建设指南》发布后，平台侧最大规模的一次保护机制统一升级。</p><p><strong>标签：</strong> `#国内企业` `#短视频` `#青少年模式` `#消费拦截` `#内容审核` `#产品更新`</p><p>---</p></div></div></section><section class="section"><div class="section-title"><span class="section-icon" style="background:#7c3aed">📈</span> 总结与趋势研判</div><p><strong>6月18日动态研判：</strong></p><p>1. <strong>国内：短视频平台集体升级未成年人保护机制，青少年模式进入"终端联动"新阶段。</strong> 6月17日，各大短视频平台同步宣布升级未成年人保护机制，涵盖消费拦截、内容审核、青少年模式三大领域。最值得关注的是"打通手机终端与短视频平台的联动管控"——这意味着青少年模式从"单一App隔离"走向"系统级联防"，用户在手机系统层面开启未成年人模式后，全平台统一限制充值和直播互动功能。这是《移动互联网未成年人模式建设指南》发布以来，平台侧最实质性的一次落地响应。对于腾讯成长守护平台而言，这就意味着：① 成长守护的"系统级联动"能力需要加速建设（目前主要以小程序形式存在，尚未深度接入手机系统层）；② 短视频平台的"异常消费复核机制"（高频小额消费+深夜充值自动暂停）值得成长守护借鉴，可作为"未成年人消费异常监测"功能参考。</p><p>2. <strong>国内：AI虚拟伴侣监管办法7月15日施行进入最后28天倒计时。</strong> 新华社于6月17日发布解释性报道（零时27分），距《人工智能拟人化互动服务管理暂行办法》正式施行仅剩28天。预计本周，腾讯、字节、百度等企业的AI对话产品将密集完成合规调整（算法审核、伦理审查、安全评估、备案手续）。这是本周国内未保领域最值得跟踪的动态，建议每日监控相关企业的合规动作。</p><p><strong>近期趋势延续：</strong></p><p>* 国内：短视频平台集体升级未保机制（6/17），AI虚拟伴侣监管办法7月15日施行进入倒计时；抖音"未成年人陪伴中心"6月11日上线；《移动互联网未成年人模式建设指南》落地中</p><p>* 国际：英国禁令进入"细节博弈期"（7月公布更多细节，触发2+1熔断今日暂停收录）；Roblox按年龄分级账号全球上线（6/16）；澳大利亚禁令实施6个月后效果评估值得关注</p><hr></section><section class="section thinking-section"><div class="section-title"><span class="section-icon" style="background:#d97706">💡</span> 思考：与腾讯成长守护平台的关系及行动建议</div><h3 class="sub-heading">一、今日事件与成长守护的关联</h3><p><strong>1. 短视频平台未成年人保护机制迎来大升级（2026-06-17，新事件）</strong></p><p>* <strong>关联点：</strong> 6月17日，各大短视频平台（抖音、快手等）同步宣布升级未成年人保护机制，这是继《移动互联网未成年人模式建设指南》发布后，平台侧最大规模的一次保护机制统一升级。此次升级有四个关键亮点值得腾讯关注：</p><p>1. <strong>系统级联动管控</strong>：开启手机系统级青少年模式后，全平台统一限制充值、直播互动功能。这意味着青少年模式从"单一App隔离"走向"系统级联防"。</p><p>2. <strong>异常消费复核机制</strong>：出现高频小额连续消费、深夜集中充值等异常行为时，平台自动暂停付费功能并联系监护人确认。这是"消费行为异常监测"在未成年人保护领域的创新应用。</p><p>3. <strong>按年龄划分内容梯度</strong>：低龄用户专区仅推送科普、美育、自然等正向内容，减少娱乐化、碎片化视频推送比例。这是"分龄内容推荐"的实践落地。</p><p>4. <strong>家长后台使用记录查询</strong>：家长可查看孩子的浏览内容、互动行为。这是"监护透明化"的功能升级。</p><p>成长守护平台目前主要以小程序形式存在，尚未深度接入手机系统层。短视频平台的"系统级联动"实践，为成长守护提供了可借鉴的技术路径。</p><p>* <strong>成长守护可借鉴</strong>：</p><p>* "系统级联动管控"——成长守护是否可以与手机厂商（华为、小米、OPPO、vivo等）合作，将成长守护的未成年人保护能力嵌入手机系统的"未成年人模式"？用户在手机系统层开启未成年人模式后，成长守护自动激活相应保护功能（时长管控、消费限制、内容过滤等）。</p><p>* "异常消费复核机制"——成长守护是否可以新增"未成年人消费异常监测"功能？当系统检测到未成年用户出现高频小额连续消费、深夜集中充值等异常行为时，自动暂停付费功能并向监护人发送确认通知。</p><p>* "按年龄划分内容梯度"——成长守护的内容推荐和保护策略是否可以按年龄更精细地划分（6-8岁、9-12岁、13-15岁、16-17岁）？</p><p>* "家长后台使用记录查询"——成长守护小程序是否可以新增"使用记录查询"功能，让家长清晰查看孩子的App使用行为、浏览内容类型、互动对象等？</p><p>* <strong>行动建议</strong>：</p><p>* <strong>即刻</strong>：安排专人研究各大短视频平台此次升级的具体技术方案，特别关注"系统级联动管控"的实现方式（是通过Android的Digital Wellbeing API？还是厂商自定义接口？）。可参考搜狐娱乐的报道原文（https://yule.sohu.com/a/1037770351_100227126）。</p><p>* <strong>短期（2周内）</strong>：基于此次平台升级的实践，形成"青少年模式系统级联动技术方案"内部分析报告，重点分析：①成长守护与手机厂商系统的对接可行性和技术方案；②"异常消费复核机制"在成长守护中的实现路径；③"按年龄划分内容梯度"在游戏/内容推荐场景的应用方案。</p><p>* <strong>中长期</strong>：推动成长守护从"小程序工具"升级为"系统级未成年人保护平台"——与手机厂商、应用平台、监管部门形成三方联动的技术体系，让未成年人保护从"单一App层面"走向"全终端、全平台联防"。</p><hr><p><strong>日报生成时间：</strong> 2026年6月18日 10:30（自动化任务 execution）</p><p><strong>下次执行：</strong> 2026年6月19日 10:30</p></section>
+    <style>
+      .archive-section { margin-top:32px; }
+      .archive-item {
+        display:block; background:#fff;
+        border:1px solid #e2e8f0; border-left:3px solid #a78bfa;
+        border-radius:10px; padding:14px 18px;
+        text-decoration:none; color:inherit;
+        transition:border-left-color .2s, box-shadow .2s;
+      }
+      .archive-item:hover {
+        border-left-color:#7c3aed;
+        box-shadow:0 2px 8px rgba(124,58,237,.1);
+      }
+      .archive-item-date { font-size:15px; font-weight:700; color:#1a2e3d; margin-bottom:4px; }
+      .archive-item-summary { font-size:11px; color:#8ba3b5; line-height:1.4; }
+      .archive-empty { text-align:center; padding:20px; color:#8ba3b5; font-size:14px; }
+    </style>
+    <section class="archive-section">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+        <div style="flex:1;height:1px;background:linear-gradient(270deg,#7c3aed,#a78bfa);"></div>
+        <div style="font-size:15px;font-weight:700;letter-spacing:.06em;color:#5b21b0;white-space:nowrap;display:flex;align-items:center;gap:8px;">
+          <span style="display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;background:#7c3aed;border-radius:6px;font-size:12px;color:#fff;">📚</span>
+          历史存档
+        </div>
+        <div style="flex:1;height:1px;background:linear-gradient(90deg,#7c3aed,#a78bfa);"></div>
+      </div>
+      <div id="archiveList"></div>
+    </section>
+    <script>
+    (function(){
+      var wds=['周日','周一','周二','周三','周四','周五','周六'];
+      var cur='2026-06-18';
+      fetch('../reports-index.json?_='+Date.now())
+        .then(function(r){return r.json();})
+        .then(function(data){
+          var others=data.filter(function(d){return d.date!==cur;});
+          var el=document.getElementById('archiveList');
+          if(others.length===0){el.innerHTML='<div class="archive-empty">暂无更多历史报告</div>';return;}
+          var h='';
+          others.forEach(function(item){
+            var d=new Date(item.date+'T00:00:00');
+            var wd=wds[d.getDay()];
+            var sum=(item.summary||'').substring(0,60);
+            h+='<a class="archive-item" href="../reports/'+item.file+'">'
+              +'<div class="archive-item-date">'+item.date+' <span style="font-size:12px;color:#7c3aed;font-weight:600;">'+wd+'</span></div>'
+              +'<div class="archive-item-summary">'+sum+'</div>'
+              +'</a>';
+          });
+          el.innerHTML=h;
+        })
+        .catch(function(){});
+    })();
+    </script>
+  
+</div>
+
+<footer class="report-footer">
+  <p><strong>🛡️ 未成年人网络保护 · 每日动态日报</strong> | 2026-06-18 周四</p>
+  <p>覆盖：游戏 · 社交 · 直播 · 短视频 · 短剧 · 智能终端 · 网络消费 七大数字场景</p>
+  <p style="margin-top:8px;color:#b0b8c1;">数据来源：公开网络信息 · 由 WorkBuddy 自动化驱动</p>
+</footer>
+
+</body>
+</html>
