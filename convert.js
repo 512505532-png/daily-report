@@ -51,8 +51,8 @@ function parseMd(md) {
 
     if (type === 'other') continue;
 
-    // 按 ### 分割每条动态
-    const itemBlocks = block.split(/^### /m).slice(1);
+    // 按 ### 或 **N. 分割每条动态（兼容两种日报格式）
+    const itemBlocks = block.split(/^### |\n\*\*[0-9]+\.\s/m).slice(1);
     const items = [];
 
     for (const itemBlock of itemBlocks) {
