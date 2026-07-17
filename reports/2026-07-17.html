@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>未成年人动态日报 · 2026-07-17</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&display=swap');
+:root {
+  --bg: #f0f4f8;
+  --card-bg: #ffffff;
+  --text-main: #1a2e3d;
+  --text-sub: #4a6b7f;
+  --text-muted: #8ba3b5;
+  --blue: #1890ff;
+  --blue-dark: #0d47a1;
+  --teal: #36cfc9;
+  --red: #dc2626;
+  --green: #10b981;
+  --amber: #d97706;
+  --purple: #7c3aed;
+  --border: #e2e8f0;
+  --shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  background: var(--bg);
+  color: var(--text-main);
+  line-height: 1.7;
+  margin: 0; padding: 0;
+}
+.container { max-width: 900px; margin: 0 auto; padding: 0 16px; }
+
+/* ══ Header ══ */
+.report-header {
+  background: linear-gradient(135deg, #0d47a1 0%, #1890ff 50%, #36cfc9 100%);
+  color: #fff;
+  text-align: center;
+  padding: 36px 20px 28px;
+  position: relative;
+}
+.report-header::after {
+  content: '';
+  position: absolute; bottom: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #0d47a1, #1890ff, #36cfc9, #1890ff, #0d47a1);
+}
+.report-header h1 {
+  font-size: 24px; font-weight: 700;
+  margin-bottom: 6px; letter-spacing: .05em;
+}
+.report-header .subtitle {
+  font-size: 14px; color: rgba(255,255,255,.7);
+  margin-bottom: 12px;
+}
+.report-header .legend {
+  font-size: 11px; color: rgba(255,255,255,.5);
+}
+.report-header .legend .tag-demo {
+  display: inline-block;
+  padding: 1px 6px; border-radius: 3px;
+  font-size: 10px; font-weight: 600; margin: 0 2px;
+}
+
+/* ══ Highlight box ══ */
+.highlight-box {
+  background: linear-gradient(135deg, #ecfdf5 0%, #f0fdf4 100%);
+  border: 1px solid #bbf7d0;
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin: 24px 0;
+}
+
+/* ══ Action Box (行动建议速览) ══ */
+.action-box {
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+  border: 1px solid #fcd34d;
+  border-left: 4px solid #f59e0b;
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin: 24px 0;
+}
+.action-box-title {
+  color: #92400e; font-weight: 700; font-size: 16px;
+  margin-bottom: 14px;
+}
+.action-table {
+  width: 100%; border-collapse: collapse;
+  margin: 0 0 12px; font-size: 13px;
+  background: #fff; border-radius: 8px; overflow: hidden;
+}
+.action-table th {
+  background: #b45309; color: #fff;
+  font-weight: 600; padding: 8px 12px; text-align: left;
+  font-size: 12px;
+}
+.action-table td {
+  padding: 8px 12px; border-bottom: 1px solid #fde68a;
+  color: #78350f; font-size: 13px;
+}
+.action-table tr.action-urgent td { background: #fef2f2; }
+.action-table tr.action-important td { background: #fffbeb; }
+.action-table tr:hover td { background: #fef9c3; }
+.action-highlights {
+  display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0;
+}
+.action-tag {
+  display: inline-block; font-size: 12px;
+  color: #92400e; background: rgba(255,255,255,.7);
+  border: 1px solid #fcd34d;
+  padding: 4px 12px; border-radius: 6px;
+  line-height: 1.5;
+}
+.action-hint {
+  font-size: 11px; color: #b45309; margin-top: 8px;
+  opacity: .7;
+}
+.highlight-title {
+  color: #166534; font-weight: 700; font-size: 16px;
+  margin-bottom: 10px;
+}
+.highlight-content {
+  color: #15803d; font-size: 14px; line-height: 1.8;
+}
+
+/* ══ Dashboard ══ */
+.dashboard {
+  display: flex; gap: 12px; margin: 20px 0 28px; flex-wrap: wrap;
+}
+.dash-item {
+  flex: 1; min-width: 120px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px; text-align: center;
+  box-shadow: var(--shadow);
+}
+.dash-num { font-size: 32px; font-weight: 700; line-height: 1.2; }
+.dash-label { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+
+/* ══ Section ══ */
+.section {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+.section-title {
+  font-size: 17px; font-weight: 700;
+  margin-bottom: 20px;
+  display: flex; align-items: center; gap: 10px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--border);
+}
+.section-icon {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 28px; height: 28px; border-radius: 6px;
+  font-size: 14px; color: #fff; flex-shrink: 0;
+}
+
+/* ══ Card ══ */
+.card {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 18px 20px;
+  margin-bottom: 16px;
+  background: #fff;
+  transition: box-shadow .2s;
+}
+.card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+.card-header { margin-bottom: 8px; }
+.card-title {
+  font-weight: 700; font-size: 15px; margin: 0;
+  color: #111827; line-height: 1.5;
+  display: flex; align-items: flex-start; gap: 6px; flex-wrap: wrap;
+}
+.card-title-link {
+  color: #111827; text-decoration: none;
+  border-bottom: 1px dashed #91caff;
+  transition: all .2s;
+}
+.card-title-link:hover {
+  color: var(--blue); border-bottom-color: var(--blue);
+  border-bottom-style: solid;
+}
+.card-num {
+  color: var(--blue); font-weight: 700; flex-shrink: 0;
+}
+.tag-new {
+  display: inline-block;
+  font-size: 10px; padding: 2px 8px; border-radius: 4px;
+  font-weight: 700; white-space: nowrap;
+  vertical-align: middle; flex-shrink: 0;
+}
+.card-meta {
+  font-size: 12px; color: var(--text-muted);
+  display: flex; gap: 12px; flex-wrap: wrap;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed var(--border);
+}
+.tag-impact { font-weight: 700; }
+.card-body { font-size: 14px; color: var(--text-sub); }
+.card-body p { margin: 6px 0; }
+.card-body ul { margin: 6px 0 6px 20px; }
+.card-body li { margin: 4px 0; }
+.card-body strong { color: var(--text-main); }
+.card-impact {
+  background: #fff7ed; color: #9a3412;
+  padding: 12px 16px; border-radius: 8px;
+  margin-top: 12px; font-size: 13px; line-height: 1.7;
+  border-left: 3px solid var(--amber);
+}
+.link-list {
+  margin-top: 12px; font-size: 12px;
+  display: flex; gap: 12px; flex-wrap: wrap;
+}
+.link-list a {
+  color: var(--blue); text-decoration: none;
+  padding: 3px 10px; border-radius: 4px;
+  border: 1px solid #e0e7ff;
+  background: #f8faff;
+  transition: all .15s;
+}
+.link-list a:hover { background: var(--blue); color: #fff; border-color: var(--blue); }
+
+/* ══ 总结/思考板块 ══ */
+.section table {
+  width: 100%; border-collapse: collapse;
+  margin: 16px 0; font-size: 13px;
+}
+.section th {
+  background: linear-gradient(135deg, var(--blue-dark), var(--blue));
+  color: #fff; font-weight: 600;
+  padding: 10px 14px; text-align: left;
+}
+.section td {
+  padding: 10px 14px; border-bottom: 1px solid var(--border);
+  color: var(--text-sub);
+}
+.section tr:hover td { background: #f8faff; }
+.section h3.sub-heading {
+  font-size: 14px; font-weight: 700;
+  color: var(--text-main);
+  margin: 18px 0 10px;
+  padding-left: 12px;
+  border-left: 3px solid var(--blue);
+}
+.section h4 {
+  font-size: 13px; font-weight: 600;
+  color: var(--text-sub); margin: 14px 0 8px;
+}
+.section p { font-size: 14px; color: var(--text-sub); margin: 6px 0; }
+.section ul { font-size: 14px; margin: 6px 0 6px 20px; }
+.section li { margin: 4px 0; color: var(--text-sub); }
+.section a { color: var(--blue); text-decoration: none; }
+.section a:hover { text-decoration: underline; }
+.section hr { border: none; height: 1px; background: var(--border); margin: 20px 0; }
+
+.thinking-section {
+  border-top: 3px solid var(--amber);
+}
+
+/* ══ Footer ══ */
+.report-footer {
+  text-align: center; font-size: 12px;
+  color: var(--text-muted);
+  padding: 28px 16px;
+  border-top: 1px solid var(--border);
+  margin-top: 12px;
+  background: #f8fafc;
+}
+.report-footer strong { color: var(--text-sub); }
+
+/* ══ Responsive ══ */
+@media (max-width: 600px) {
+  .report-header h1 { font-size: 20px; }
+  .container { padding: 0 10px; }
+  .section { padding: 16px; }
+  .card { padding: 14px; }
+  .dash-item { min-width: 90px; padding: 12px; }
+  .dash-num { font-size: 24px; }
+}
+</style>
+</head>
+<body>
+
+<header class="report-header">
+  <h1>🛡️ 未成年人网络保护 · 每日动态日报</h1>
+  <div class="subtitle">2026-07-17 周五 · 共2条动态</div>
+  <div class="legend">
+    <span class="tag-demo" style="background:#fef2f2;color:#dc2626">🔴 重大</span>
+    <span class="tag-demo" style="background:#fffbeb;color:#d97706">✦ 新增</span>
+    <span class="tag-demo" style="background:#eff6ff;color:#2563eb">🔄 跟进</span>
+    = 标签含义
+  </div>
+</header>
+
+<div class="container">
+<div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:20px 0 0;">
+  <span style="font-size:11px;color:#4a6b7f;border:1px solid #e2e8f0;padding:3px 12px;border-radius:20px;">🏢 大型互联网及游戏公司动态</span>
+  <span style="font-size:11px;color:#4a6b7f;border:1px solid #e2e8f0;padding:3px 12px;border-radius:20px;">🇨🇳 国内未保监管动态</span>
+  <span style="font-size:11px;color:#4a6b7f;border:1px solid #e2e8f0;padding:3px 12px;border-radius:20px;">🌍 国外监管及公司动态</span>
+</div>
+
+    <div class="dashboard">
+      <div class="dash-item">
+        <div class="dash-num" style="color:#dc2626">0</div>
+        <div class="dash-label">🇨🇳 国内动态</div>
+      </div>
+      <div class="dash-item">
+        <div class="dash-num" style="color:#2563eb">2</div>
+        <div class="dash-label">🌍 国际动态</div>
+      </div>
+      <div class="dash-item">
+        <div class="dash-num" style="color:#059669">2</div>
+        <div class="dash-label">📊 动态合计</div>
+      </div>
+    </div><section class="section"><div class="section-title"><span class="section-icon" style="background:#2563eb">🌍</span> 国际动态 (2条)</div><div class="card" style="border-left: 4px solid #10b981;"><div class="card-header"><h3 class="card-title">1. Ofcom 正式对 TikTok 启动调查：年龄"自证"被监管判为"不够有效" <span class="tag-new" style="background:#fffbeb;color:#d97706">✦ 新增</span></h3></div><div class="card-meta"><span class="tag-impact" style="color:#2563eb">影响：中</span><span><a href="https://digitalpolicyalert.org/event/41829-ofcom-announces-investigation-into-tiktok-regarding-compliance-with-child-protection-duties-under-the-online-safety-act" target="_blank">Ofcom 对 TikTok 启动调查（digitalpolicyalert，含案件号与 ofcom/bbc 来源）</a> ｜ <a href="https://thesheffieldpress.com/ofcom-launches-investigation-into-tiktok-over-child-safety" target="_blank">The Sheffield Press：Ofcom launches investigation into TikTok over child safety</a> ｜ <a href="https://www.sme-insights.co.uk/ofcom-launches-investigation-into-tiktok-child-safety-concerns" target="_blank">SME-INSIGHTS：Ofcom launches investigation into TikTok child safety concerns</a></span></div><div class="card-body"><ul><li><strong>事件日期：</strong> 2026-07-16（Ofcom 启动调查；同日发布《年龄保证报告》）</li><li><strong>报道日期：</strong> 2026-07-16（BBC《Today》节目、Sky News、Yahoo News、Politico 等多源报道；digitalpolicyalert 记录案件号）</li><li><strong>摘要：</strong> 英国通信管理局 Ofcom 于 <strong>7 月 16 日</strong> 对 TikTok Information Technologies UK Limited 启动正式调查（案件号 <strong>CW/01352/07/26</strong>），依据《在线安全法 2023》第 12 条儿童保护义务，审查 TikTok 是否：</li><li>建立相称的系统与流程，阻止儿童接触"首要优先有害内容"；</li><li>对暴露于其他有害内容的各年龄段儿童提供保护；</li><li>其"年龄保证（age assurance）"工具是否能<strong>"高度有效"地判定用户是否为儿童</strong>。</li><li><strong>同日关键报告：</strong> Ofcom 发布的《年龄保证报告》指出，TikTok 等平台使用的<strong>"年龄推断（age inference）"技术</strong>——靠用户观看的视频、互动行为来推测年龄——"在某些情况下未能正确识别相当比例的儿童"，监管认为<strong>年龄推断本身"不被认为高度有效"</strong>。Ofcom 战略与研究总监 Kate Davies 在 BBC 节目上称"对年龄推断能否高度有效有严重怀疑"。</li><li><strong>后果与表态：</strong> 若认定违规，最高可罚 <strong>1800 万英镑或全球营收 10%</strong>（取高者）；Ofcom 预计 <strong>10 月</strong>向公众更新进展。TikTok 回应称"有信心满足《在线安全法》义务，将与 Ofcom 合作证明"。</li><li><strong>信号：</strong> 这是英国在 6/15 宣布未满 16 岁社媒禁令之外，监管重心从"立法宣布"转向"<strong>核验平台年龄闸门是否真实有效</strong>"的标志性动作。监管直接点名"行为推断式年龄识别"不够可靠，与全球（欧盟 DSA、澳洲 eSafety、中国"实名+AI 多模态"）对强身份验证的共识高度共振——"自报生日/行为推断"正被多国监管判为不可接受。</li></ul></div></div><div class="card" style="border-left: 4px solid #10b981;"><div class="card-header"><h3 class="card-title">2. 英国政府正式发布"未满 16 岁社媒禁令"咨询回应，披露落地细节 <span class="tag-new" style="background:#fffbeb;color:#d97706">✦ 新增</span></h3></div><div class="card-meta"><span class="tag-impact" style="color:#2563eb">影响：中</span><span><a href="https://www.gov.uk/government/consultations/growing-up-in-the-online-world-a-national-consultation/outcome/growing-up-in-the-online-world-progress-statement" target="_blank">GOV.UK：Growing up in the online world: progress statement（Updated 15 July 2026）</a></span></div><div class="card-body"><ul><li><strong>事件日期：</strong> 2026-07-15（向议会提交 progress statement，落地 6/15 宣布时承诺的"7月回应"）</li><li><strong>报道日期：</strong> 2026-07-15（GOV.UK，页面标注"Updated 15 July 2026"）</li><li><strong>摘要：</strong> 英国政府依《儿童福祉与学校法 2026》第 71(1) 条向议会提交"Growing up in the online world"进展声明（progress statement），即针对"未满 16 岁社媒禁令"公众咨询的<strong>正式回应</strong>。核心内容：</li><li><strong>禁令范围（采用澳洲模型）：</strong> 覆盖 Snapchat、TikTok、YouTube、Instagram、Facebook、X 等"用户互推+算法"平台；WhatsApp、Signal 等纯通讯类豁免；教育、电商、音乐流媒体设狭义豁免清单。</li><li><strong>禁功能：</strong> 禁止未满 16 岁使用<strong>直播</strong>、与<strong>陌生人沟通</strong>（含游戏平台）；16–17 岁默认关闭上述功能。</li><li><strong>AI 聊天机器人护栏：</strong> 以性关系为主要目的的"浪漫伴侣（romantic companion）"类服务<strong>禁向 18 岁以下开放</strong>；通用 AI 需证明 ≥18 才能使用性明示互动功能。</li><li><strong>强年龄保证：</strong> 要求"高度有效年龄保证（HEAA）"，Ofcom 将于 <strong>10 月底前</strong>提交标准；成年人也可能被要求证明成年，但隐私优先。</li><li><strong>时间线：</strong> 首批社媒限制法规 <strong>2026 年底前</strong>提交议会，预计 <strong>2027 年春</strong>生效；更多法规 12 个月内落地。</li><li><strong>16–17 岁可选保护：</strong> 可主动开启"<strong>夜间宵禁</strong>"、关闭"<strong>无限滚动</strong>"等成瘾性设计。</li><li><strong>信号：</strong> 这是 6/15"禁令宣布"后的落地性政策文件，把单一"禁平台"扩展为"<strong>禁功能 + 强年龄保证 + AI 护栏 + 年龄梯度</strong>"的组合拳。与欧盟 DSA 未成年人保护指南、澳洲 eSafety、中国《人工智能拟人化互动服务管理暂行办法》（7/15 同日施行）形成全球共振——监管焦点从"是否禁用"转向"如何真实有效地验证年龄、阻断有害功能"。注：7/16 日报曾据检索判断"英国 7月咨询回应尚未发布"，本文件确认其已于 7/15 落地，特此更正闭环。</li></ul><p>---</p></div></div></section><section class="section"><div class="section-title"><span class="section-icon" style="background:#7c3aed">📈</span> 总结与趋势研判</div><h3 class="sub-heading">今日核心信号</h3><p><strong>1. 英国未成年人网络保护进入"执行落地期"：咨询回应落地 + Ofcom 开查 TikTok</strong></p><ul><li>7/15 政府 progress statement 把 6/15 的"禁令宣布"落成详细政策文件（范围/功能/AI 护栏/时间线）；7/16 Ofcom 立即对 TikTok 启动正式调查，监管从"立法宣示"转向"<strong>核验平台是否真做到了</strong>"。两条线索同一周出牌，显示英国正以"禁令框架 + 强执法"双轨推进。</li></ul><ul><li>对行业的直接含义：未满 16 岁社媒禁令虽 2027 春才生效，但 Ofcom 对既有《在线安全法》儿童义务的执法已"先行"。平台今年（而非 2027）就要面对年龄保证的真实压力测试。</li></ul><p><strong>2. "年龄验证"成全球监管焦点：自报生日 / 行为推断被判"不够有效"</strong></p><ul><li>Ofcom《年龄保证报告》明确点名"年龄推断（靠行为猜年龄）"漏判相当比例儿童、不构成"高度有效"。这与南都 7/14 实测暴露的"仅弹窗、身份核验弱、剧情绕过"问题<strong>同构</strong>——全球监管与实践都指向一个结论：<strong>弱身份核验撑不起未成年人保护</strong>。</li></ul><ul><li>四方共振：欧盟 DSA（强身份验证）、澳洲 eSafety（多重年龄检查）、英国 Ofcom（点名 age inference 失效）、中国（实名 + AI 多模态声纹/年龄/代过检测）一致认为"自证年龄不可靠"，强身份验证成为未成年人保护第一道门。</li></ul><p><strong>3. AI 护栏国际化：英国明确"浪漫伴侣"18+，与中国《办法》同频</strong></p><ul><li>英国 progress statement 将"以性关系为目的的 AI 聊天机器人"设为 18+，通用 AI 的性明示互动需 ≥18 验证——与中国 7/15 施行的《人工智能拟人化互动服务管理暂行办法》（禁向未成年人提供虚拟亲密关系、建未成年人模式、2 小时提醒、身份提示）形成跨国同频。全球"管 AI 人机关系设计"的共识进一步固化。</li></ul><h3 class="sub-heading">近期关键节点倒计时</h3><ul><li><strong>7月15日（已落地）：</strong> 英国政府"未满 16 岁社媒禁令"咨询回应（progress statement）正式发布</li></ul><ul><li><strong>7月16日（已落地）：</strong> Ofcom 对 TikTok 启动正式调查（案件号 CW/01352/07/26），预计 10 月更新</li></ul><ul><li><strong>7月27日：</strong> 加州 MDL 第二起 bellwether 庭审（R.K.C. 案，剩余被告 Meta + Snap）</li></ul><ul><li><strong>8月（待定）：</strong> 4 州检方诉 Meta 1.4 万亿美元天价索赔 Trial</li></ul><ul><li><strong>9月16日：</strong> 冯德莱恩"盟情咨文"拟宣布欧盟社媒禁令建议</li></ul><ul><li><strong>10月（待定）：</strong> Ofcom 年龄保证标准 + TikTok 调查进展更新</li></ul><ul><li><strong>2027年春：</strong> 英国首批社媒限制法规生效</li></ul><hr></section><section class="section thinking-section"><div class="section-title"><span class="section-icon" style="background:#d97706">💡</span> 思考：与腾讯成长守护平台的关系及行动建议</div><h3 class="sub-heading">一、今日事件与成长守护的关联</h3><p><strong>（1）Ofcom 点名 TikTok"年龄推断"不够有效 → 把"强身份核验"做成成长守护的差异化底座</strong></p><ul><li>Ofcom 明确指出依赖行为推断的年龄识别会漏判相当比例儿童、不构成"高度有效"，这与南都 7/14 实测暴露的"仅弹窗、身份核验弱、可剧情绕过"问题本质同构。成长守护在游戏侧已验证的<strong>声纹/年龄/代过多模态识别</strong>，以及 AI 对话版"强制切未成年人模式 + 2 小时提醒 + 身份提示"的机制，正是"强身份核验"的工程化答案。可把"可靠识别未成年人"作为对外沟通的可量化守护成效证据，巩固行业标杆地位。</li></ul><p><strong>（2）英国"禁功能 + AI 18+ 护栏 + 年龄梯度"组合拳 → 把"年龄梯度 + 功能分级"内化为产品设计红线</strong></p><ul><li>英国把"未满 16 禁直播/陌生人沟通、16–17 默认关闭、AI 浪漫伴侣禁 18 以下、通用 AI 性互动需 ≥18 验证"落实为可调的年龄梯度框架，并允许 16–17 岁主动开启夜间宵禁、关闭无限滚动。成长守护可借鉴：在 AI 对话版与家庭管控中，按年龄段（<14、14–16、16–18）设置差异化功能边界与默认保护，并把"无限滚动/夜间宵禁"类成瘾性设计阻断意识纳入守护提示，化全球监管压强为产品能力。</li></ul><p><strong>（3）全球共振：年龄验证从"自证生日"走向"强验证" → 提前布局合规与循证沟通</strong></p><ul><li>欧盟 DSA、澳洲 eSafety、英国 Ofcom、中国实名 + AI 多模态，四方同指"自报年龄不可靠"。成长守护应持续强化监护人授权下的可靠身份识别，并在对外政策建议与行业交流中，以"强身份核验是未成年人保护第一道门"为循证主线，把外部监管压强转化为可对外输出的儿童友好产品设计原则与守护成效指标。</li></ul><hr><p>> 本日报由自动化任务生成，数据来源于公开网络搜索，仅供参考。</p><p>> 完整日报在线版：https://512505532-png.github.io/daily-report/reports/2026-07-17.html</p></section>
+    <style>
+      .archive-section { margin-top:32px; }
+      .archive-item {
+        display:block; background:#fff;
+        border:1px solid #e2e8f0; border-left:3px solid #a78bfa;
+        border-radius:10px; padding:14px 18px;
+        text-decoration:none; color:inherit;
+        transition:border-left-color .2s, box-shadow .2s;
+      }
+      .archive-item:hover {
+        border-left-color:#7c3aed;
+        box-shadow:0 2px 8px rgba(124,58,237,.1);
+      }
+      .archive-item-date { font-size:15px; font-weight:700; color:#1a2e3d; margin-bottom:4px; }
+      .archive-item-summary { font-size:11px; color:#8ba3b5; line-height:1.4; }
+      .archive-empty { text-align:center; padding:20px; color:#8ba3b5; font-size:14px; }
+    </style>
+    <section class="archive-section">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+        <div style="flex:1;height:1px;background:linear-gradient(270deg,#7c3aed,#a78bfa);"></div>
+        <div style="font-size:15px;font-weight:700;letter-spacing:.06em;color:#5b21b0;white-space:nowrap;display:flex;align-items:center;gap:8px;">
+          <span style="display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;background:#7c3aed;border-radius:6px;font-size:12px;color:#fff;">📚</span>
+          历史存档
+        </div>
+        <div style="flex:1;height:1px;background:linear-gradient(90deg,#7c3aed,#a78bfa);"></div>
+      </div>
+      <div id="archiveList"></div>
+    </section>
+    <script>
+    (function(){
+      var wds=['周日','周一','周二','周三','周四','周五','周六'];
+      var cur='2026-07-17';
+      fetch('../reports-index.json?_='+Date.now())
+        .then(function(r){return r.json();})
+        .then(function(data){
+          var others=data.filter(function(d){return d.date!==cur;});
+          var el=document.getElementById('archiveList');
+          if(others.length===0){el.innerHTML='<div class="archive-empty">暂无更多历史报告</div>';return;}
+          var h='';
+          others.forEach(function(item){
+            var d=new Date(item.date+'T00:00:00');
+            var wd=wds[d.getDay()];
+            var sum=(item.summary||'').substring(0,60);
+            h+='<a class="archive-item" href="../reports/'+item.file+'">'
+              +'<div class="archive-item-date">'+item.date+' <span style="font-size:12px;color:#7c3aed;font-weight:600;">'+wd+'</span></div>'
+              +'<div class="archive-item-summary">'+sum+'</div>'
+              +'</a>';
+          });
+          el.innerHTML=h;
+        })
+        .catch(function(){});
+    })();
+    </script>
+  
+</div>
+
+<footer class="report-footer">
+  <p><strong>🛡️ 未成年人网络保护 · 每日动态日报</strong> | 2026-07-17 周五</p>
+  <p>覆盖：游戏 · 社交 · 直播 · 短视频 · 短剧 · 智能终端 · 网络消费 七大数字场景</p>
+  <p style="margin-top:8px;color:#b0b8c1;">数据来源：公开网络信息 · 由 WorkBuddy 自动化驱动</p>
+</footer>
+
+</body>
+</html>
