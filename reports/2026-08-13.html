@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>未成年人动态日报 · 2026-08-13</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&display=swap');
+:root {
+  --bg: #f0f4f8;
+  --card-bg: #ffffff;
+  --text-main: #1a2e3d;
+  --text-sub: #4a6b7f;
+  --text-muted: #8ba3b5;
+  --blue: #1890ff;
+  --blue-dark: #0d47a1;
+  --teal: #36cfc9;
+  --red: #dc2626;
+  --green: #10b981;
+  --amber: #d97706;
+  --purple: #7c3aed;
+  --border: #e2e8f0;
+  --shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  background: var(--bg);
+  color: var(--text-main);
+  line-height: 1.7;
+  margin: 0; padding: 0;
+}
+.container { max-width: 900px; margin: 0 auto; padding: 0 16px; }
+
+/* ══ Header ══ */
+.report-header {
+  background: linear-gradient(135deg, #0d47a1 0%, #1890ff 50%, #36cfc9 100%);
+  color: #fff;
+  text-align: center;
+  padding: 36px 20px 28px;
+  position: relative;
+}
+.report-header::after {
+  content: '';
+  position: absolute; bottom: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #0d47a1, #1890ff, #36cfc9, #1890ff, #0d47a1);
+}
+.report-header h1 {
+  font-size: 24px; font-weight: 700;
+  margin-bottom: 6px; letter-spacing: .05em;
+}
+.report-header .subtitle {
+  font-size: 14px; color: rgba(255,255,255,.7);
+  margin-bottom: 12px;
+}
+.report-header .legend {
+  font-size: 11px; color: rgba(255,255,255,.5);
+}
+.report-header .legend .tag-demo {
+  display: inline-block;
+  padding: 1px 6px; border-radius: 3px;
+  font-size: 10px; font-weight: 600; margin: 0 2px;
+}
+
+/* ══ Highlight box ══ */
+.highlight-box {
+  background: linear-gradient(135deg, #ecfdf5 0%, #f0fdf4 100%);
+  border: 1px solid #bbf7d0;
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin: 24px 0;
+}
+
+/* ══ Action Box (行动建议速览) ══ */
+.action-box {
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+  border: 1px solid #fcd34d;
+  border-left: 4px solid #f59e0b;
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin: 24px 0;
+}
+.action-box-title {
+  color: #92400e; font-weight: 700; font-size: 16px;
+  margin-bottom: 14px;
+}
+.action-table {
+  width: 100%; border-collapse: collapse;
+  margin: 0 0 12px; font-size: 13px;
+  background: #fff; border-radius: 8px; overflow: hidden;
+}
+.action-table th {
+  background: #b45309; color: #fff;
+  font-weight: 600; padding: 8px 12px; text-align: left;
+  font-size: 12px;
+}
+.action-table td {
+  padding: 8px 12px; border-bottom: 1px solid #fde68a;
+  color: #78350f; font-size: 13px;
+}
+.action-table tr.action-urgent td { background: #fef2f2; }
+.action-table tr.action-important td { background: #fffbeb; }
+.action-table tr:hover td { background: #fef9c3; }
+.action-highlights {
+  display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0;
+}
+.action-tag {
+  display: inline-block; font-size: 12px;
+  color: #92400e; background: rgba(255,255,255,.7);
+  border: 1px solid #fcd34d;
+  padding: 4px 12px; border-radius: 6px;
+  line-height: 1.5;
+}
+.action-hint {
+  font-size: 11px; color: #b45309; margin-top: 8px;
+  opacity: .7;
+}
+.highlight-title {
+  color: #166534; font-weight: 700; font-size: 16px;
+  margin-bottom: 10px;
+}
+.highlight-content {
+  color: #15803d; font-size: 14px; line-height: 1.8;
+}
+
+/* ══ Dashboard ══ */
+.dashboard {
+  display: flex; gap: 12px; margin: 20px 0 28px; flex-wrap: wrap;
+}
+.dash-item {
+  flex: 1; min-width: 120px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px; text-align: center;
+  box-shadow: var(--shadow);
+}
+.dash-num { font-size: 32px; font-weight: 700; line-height: 1.2; }
+.dash-label { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+
+/* ══ Section ══ */
+.section {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+.section-title {
+  font-size: 17px; font-weight: 700;
+  margin-bottom: 20px;
+  display: flex; align-items: center; gap: 10px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--border);
+}
+.section-icon {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 28px; height: 28px; border-radius: 6px;
+  font-size: 14px; color: #fff; flex-shrink: 0;
+}
+
+/* ══ Card ══ */
+.card {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 18px 20px;
+  margin-bottom: 16px;
+  background: #fff;
+  transition: box-shadow .2s;
+}
+.card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+.card-header { margin-bottom: 8px; }
+.card-title {
+  font-weight: 700; font-size: 15px; margin: 0;
+  color: #111827; line-height: 1.5;
+  display: flex; align-items: flex-start; gap: 6px; flex-wrap: wrap;
+}
+.card-title-link {
+  color: #111827; text-decoration: none;
+  border-bottom: 1px dashed #91caff;
+  transition: all .2s;
+}
+.card-title-link:hover {
+  color: var(--blue); border-bottom-color: var(--blue);
+  border-bottom-style: solid;
+}
+.card-num {
+  color: var(--blue); font-weight: 700; flex-shrink: 0;
+}
+.tag-new {
+  display: inline-block;
+  font-size: 10px; padding: 2px 8px; border-radius: 4px;
+  font-weight: 700; white-space: nowrap;
+  vertical-align: middle; flex-shrink: 0;
+}
+.card-meta {
+  font-size: 12px; color: var(--text-muted);
+  display: flex; gap: 12px; flex-wrap: wrap;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed var(--border);
+}
+.tag-impact { font-weight: 700; }
+.card-body { font-size: 14px; color: var(--text-sub); }
+.card-body p { margin: 6px 0; }
+.card-body ul { margin: 6px 0 6px 20px; }
+.card-body li { margin: 4px 0; }
+.card-body strong { color: var(--text-main); }
+.card-impact {
+  background: #fff7ed; color: #9a3412;
+  padding: 12px 16px; border-radius: 8px;
+  margin-top: 12px; font-size: 13px; line-height: 1.7;
+  border-left: 3px solid var(--amber);
+}
+.link-list {
+  margin-top: 12px; font-size: 12px;
+  display: flex; gap: 12px; flex-wrap: wrap;
+}
+.link-list a {
+  color: var(--blue); text-decoration: none;
+  padding: 3px 10px; border-radius: 4px;
+  border: 1px solid #e0e7ff;
+  background: #f8faff;
+  transition: all .15s;
+}
+.link-list a:hover { background: var(--blue); color: #fff; border-color: var(--blue); }
+
+/* ══ 总结/思考板块 ══ */
+.section table {
+  width: 100%; border-collapse: collapse;
+  margin: 16px 0; font-size: 13px;
+}
+.section th {
+  background: linear-gradient(135deg, var(--blue-dark), var(--blue));
+  color: #fff; font-weight: 600;
+  padding: 10px 14px; text-align: left;
+}
+.section td {
+  padding: 10px 14px; border-bottom: 1px solid var(--border);
+  color: var(--text-sub);
+}
+.section tr:hover td { background: #f8faff; }
+.section h3.sub-heading {
+  font-size: 14px; font-weight: 700;
+  color: var(--text-main);
+  margin: 18px 0 10px;
+  padding-left: 12px;
+  border-left: 3px solid var(--blue);
+}
+.section h4 {
+  font-size: 13px; font-weight: 600;
+  color: var(--text-sub); margin: 14px 0 8px;
+}
+.section p { font-size: 14px; color: var(--text-sub); margin: 6px 0; }
+.section ul { font-size: 14px; margin: 6px 0 6px 20px; }
+.section li { margin: 4px 0; color: var(--text-sub); }
+.section a { color: var(--blue); text-decoration: none; }
+.section a:hover { text-decoration: underline; }
+.section hr { border: none; height: 1px; background: var(--border); margin: 20px 0; }
+
+.thinking-section {
+  border-top: 3px solid var(--amber);
+}
+
+/* ══ Footer ══ */
+.report-footer {
+  text-align: center; font-size: 12px;
+  color: var(--text-muted);
+  padding: 28px 16px;
+  border-top: 1px solid var(--border);
+  margin-top: 12px;
+  background: #f8fafc;
+}
+.report-footer strong { color: var(--text-sub); }
+
+/* ══ Responsive ══ */
+@media (max-width: 600px) {
+  .report-header h1 { font-size: 20px; }
+  .container { padding: 0 10px; }
+  .section { padding: 16px; }
+  .card { padding: 14px; }
+  .dash-item { min-width: 90px; padding: 12px; }
+  .dash-num { font-size: 24px; }
+}
+</style>
+</head>
+<body>
+
+<header class="report-header">
+  <h1>🛡️ 未成年人网络保护 · 每日动态日报</h1>
+  <div class="subtitle">2026-08-13 周四 · 共3条动态</div>
+  <div class="legend">
+    <span class="tag-demo" style="background:#fef2f2;color:#dc2626">🔴 重大</span>
+    <span class="tag-demo" style="background:#fffbeb;color:#d97706">✦ 新增</span>
+    <span class="tag-demo" style="background:#eff6ff;color:#2563eb">🔄 跟进</span>
+    = 标签含义
+  </div>
+</header>
+
+<div class="container">
+<div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:20px 0 0;">
+  <span style="font-size:11px;color:#4a6b7f;border:1px solid #e2e8f0;padding:3px 12px;border-radius:20px;">🏢 大型互联网及游戏公司动态</span>
+  <span style="font-size:11px;color:#4a6b7f;border:1px solid #e2e8f0;padding:3px 12px;border-radius:20px;">🇨🇳 国内未保监管动态</span>
+  <span style="font-size:11px;color:#4a6b7f;border:1px solid #e2e8f0;padding:3px 12px;border-radius:20px;">🌍 国外监管及公司动态</span>
+</div>
+
+    <div class="dashboard">
+      <div class="dash-item">
+        <div class="dash-num" style="color:#dc2626">2</div>
+        <div class="dash-label">🇨🇳 国内动态</div>
+      </div>
+      <div class="dash-item">
+        <div class="dash-num" style="color:#2563eb">1</div>
+        <div class="dash-label">🌍 国际动态</div>
+      </div>
+      <div class="dash-item">
+        <div class="dash-num" style="color:#059669">3</div>
+        <div class="dash-label">📊 动态合计</div>
+      </div>
+    </div><section class="section"><div class="section-title"><span class="section-icon" style="background:#dc2626">🇨🇳</span> 国内动态 (2条)</div><div class="card" style="border-left: 4px solid #3b82f6;"><div class="card-header"><h3 class="card-title">1. "屏"困下的青少年：乙女游戏软性心理操控 + 绕过防沉迷新案例曝光，研究揭示低龄玩家共情退化（🟢 新事件）</h3></div><div class="card-meta"><span class="tag-impact" style="color:#2563eb">影响：中</span><span>法治周末（新浪财经转载，T1/T0 混合，含央视《法治在线》、半月谈、山东大学、北师大等多家权威引用）</span></div><div class="card-body"><ul><li><strong>事件日期：</strong> 8月13日 | <strong>报道日期：</strong> 8月13日 09:30</li></ul><p>《法治周末》今日刊发深度调查"屏困下的青少年"，将未成年人游戏沉迷与 AI 虚拟陪伴风险并置，揭示"软性心理操控"这一非显性违规却危害深远的机制：</p><ul><li><strong>新案例：</strong> 央视《法治在线》2026年7月报道的浙江宁波个案——13岁初中生被短视频广告引流至标注 18+ 限制的乙女恋爱手游，借用母亲身份证绕过年龄限制，3个月充值七千余元；账号被管控后网购实名成品账号继续游玩，叠加周边消费总花费近3万元，私自购置手机熬夜至凌晨一两点，学业断崖式下滑；游戏内暧昧擦边画面对情感认知建立期的未成年人形成不良引导；</li><li><strong>新研究数据（增量）：</strong> 山东大学计算心理学研究院姜斌祥教授披露调研——重度沉迷乙女类游戏的低龄玩家中 <strong>68% 出现共情、矛盾处理能力退化</strong>，12-15岁群体尤为突出；北师大发展心理研究院调研显示 <strong>82% 青少年认同"当下快乐至上"</strong>，对传统长远规划价值观认同度下降41%，39%承认会为趣味体验选择撒谎；</li><li><strong>机制定性：</strong> 乙女游戏依靠虚拟恋爱互动+间歇强化+操作性条件反射+限时卡池制造稀缺焦虑，形成"时间+金钱双重成瘾闭环"，属"软性心理操控"，不触碰明确违法红线但扭曲婚恋情感认知、造成现实社交能力退化；</li><li><strong>分级建议：</strong> 专家呼吁现有游戏分级应增加"情感诱导、氪金商业机制"评估，乙女类游戏建立"基础内容+情感风险+商业诱导"综合分级，高亲密、高情感诱导内容归入18+层级强制屏蔽未成年人。</li><li><strong>关联领域：</strong> 游戏防沉迷 / 乙女游戏 / 绕过防沉迷 / 软性心理操控 / 分级体系</li></ul></div></div><div class="card" style="border-left: 4px solid #3b82f6;"><div class="card-header"><h3 class="card-title">2. 人民日报解读广东消保条例：广州互联网法院通报"11岁少年盲盒代拆消费3.8万"案，合同无效（🟢 新事件·司法案例）</h3></div><div class="card-meta"><span class="tag-impact" style="color:#2563eb">影响：中</span><span>人民日报（T0，第版"坚持和完善人民代表大会制度"专栏）</span></div><div class="card-body"><ul><li><strong>事件日期：</strong> 8月13日（人民日报披露法院通报） | <strong>报道日期：</strong> 8月13日</li></ul><p>人民日报今日刊文解读《广东省消费者权益保护条例》（已于8/5收过立法事件），<strong>新披露具体司法案例作为条例落地注脚</strong>：</p><ul><li><strong>新案例：</strong> 11周岁的刘某使用其外公手机号注册未实名认证平台账号，短短十几天在多个直播间购买"盲盒代拆"商品逾百笔，累计消费近3.8万元；广州互联网法院通报认定该消费行为与其年龄、智力不相适应，<strong>合同无效，经营者承担退款责任</strong>；</li><li><strong>条例硬条款（呼应8/5）：</strong> 网络游戲、网络直播、网络音视频、网络社交等提供者须设未成年人模式，合理限制单次/单日消费数额，不得提供与其民事行为能力不符的付费服务；</li><li><strong>意义：</strong> 这是广东条例10/1施行前，司法机关以具体判决昭示"未实名+未成年人大额消费=无效"的裁判口径，与8/11人民网预警"变种校园贷嵌入青少年场景"、抖音/小红书暑期治理同属"消费安全"治理主线。</li><li><strong>关联领域：</strong> 未成年人消费 / 盲盒代拆 / 司法判决 / 消保条例</li></ul><p>---</p></div></div></section><section class="section"><div class="section-title"><span class="section-icon" style="background:#2563eb">🌍</span> 国际动态 (1条)</div><div class="card" style="border-left: 4px solid #3b82f6;"><div class="card-header"><h3 class="card-title">1. Meta 推出 AI"无痕聊天"私密模式，家长可见孩子 AI 对话引发安全争议（🟢 新事件·海外企业）</h3></div><div class="card-meta"><span class="tag-impact" style="color:#2563eb">影响：中</span><span>Mashable 转述 / 网易订阅（T1/T2，但关联 Meta 官方博客与扎克伯格 FB 发文）</span></div><div class="card-body"><ul><li><strong>事件日期：</strong> 8月13日报道（扎克伯格于 Facebook 主页宣布，具体宣布日未明，报道在窗口内） | <strong>报道日期：</strong> 8月13日 00:51</li></ul><p>Meta CEO 扎克伯格宣布 Meta AI 与 WhatsApp 将上线"无痕聊天"（Incognito / 完全私密）功能，号称"第一款不在服务器存储对话记录的主流 AI 产品"，类端到端加密、会话结束即清空：</p><ul><li><strong>儿童安全双刃剑：</strong> 一方面，私密模式使 Meta 无法识别用户自残/自杀/暴力倾向等危险信号（WhatsApp 现有机制靠聊天记录触发人工审核），削弱危机干预能力；另一方面，Meta 同步推出<strong>家长可见孩子 AI 聊天内容</strong>功能（青少年 Meta AI 保护），无痕聊天限定 18+ 并做年龄确认；</li><li><strong>外部质疑：</strong> 在线安全组织 Heat Initiative 首席执行官 Sarah Gardner 指出，鉴于 Meta 此前 AI 聊天机器人曾允许与儿童进行性暗示对话，"信不过 Meta 的年龄验证记录"，要求解释如何保障儿童安全；</li><li><strong>行业背景：</strong> 该功能与扎克伯格 8/10 发布的"个人超级智能"长文（Muse Glimmer 开源模型 + 完全私密个人智能体）形成产品呼应，OpenAI/谷歌类似诉讼均依赖聊天记录取证，私密模式或削弱责任追溯。</li><li><strong>关联领域：</strong> AI 聊天 / 儿童安全 / 隐私 vs 问责 / Meta 常驻关注</li></ul><p>---</p></div></div></section><section class="section"><div class="section-title"><span class="section-icon" style="background:#7c3aed">📈</span> 总结与趋势研判</div><p>1. <strong>未成年人游戏沉迷进入"软性心理操控"认知新阶段，监管焦点从"时长"下沉到"情感诱导机制"。</strong> 今日法治周末深度报道首次系统揭示乙女游戏的"软性心理操控"——依靠虚拟恋爱+间歇强化+限时卡池形成时间金钱双重成瘾闭环，不触碰违法红线却扭曲低龄群体情感认知。结合新披露数据（68%共情退化、82%"快乐至上"），这类"商业化情感诱导"正成为继"硬时长沉迷"之后更需要关注的风险类型。对游戏企业而言，这意味着防沉迷的合规边界可能从"时长/消费限额"进一步扩展到"情感诱导强度/虚拟亲密等级"的分级评估——姜斌祥提出的"基础内容+情感风险+商业诱导"综合分级体系，或成下一轮监管讨论方向。</p><p>2. <strong>"消费安全"治理主线在国内持续收口，司法判决开始为立法提供注脚。</strong> 从 8/11 人民网预警变种校园贷，到今日人民日报披露广州互联网法院"11岁盲盒代拆3.8万无效"判决，广东消保条例（8/5立法）正通过具体司法案例获得可执行的裁判口径。"未实名+未成年人大额消费=无效"的明确信号，对直播/盲盒/游戏充值场景的平台审核义务提出了更高要求。</p><p>3. <strong>Meta AI 私密聊天撕开"隐私 vs 儿童安全问责"新裂缝，与国内《办法》形成监管对照。</strong> Meta 一面推"无痕聊天"强化隐私（18+，且无法识别危险信号），一面推"家长可见孩子AI聊天"补儿童安全，这种"隐私优先但削弱危机干预"的设计，恰好反向印证了我国《人工智能拟人化互动服务管理暂行办法》"建立未成年人模式+动态提醒+风险识别"路径的合理性——在隐私与问责之间，国内选择了"可干预优先"。对成长守护而言，这是对外沟通中可强调的合规理念差异点。</p><p>4. <strong>全球未保进入"产品默认设计+司法实质审理"双轨深水区。</strong> Meta 29州案（8/18开庭）与 Section 230 限缩（8/10裁定）共同把平台推入"产品设计即责任"的实体审理阶段；而 Meta AI 私密模式争议则说明，即便是"保护隐私"的产品创新，也可能因削弱儿童安全问责而面临监管审视。产品团队的合规叙事必须从"我们做了功能"升级为"默认状态下是否真正可干预、可审计、可问责"。</p><hr></section><section class="section thinking-section"><div class="section-title"><span class="section-icon" style="background:#d97706">💡</span> 思考：与腾讯成长守护平台的关系及行动建议</div><h3 class="sub-heading">一、今日事件与成长守护的关联</h3><p><strong>事件一："屏困下的青少年"——乙女游戏软性心理操控（国内）</strong></p><p>这条动态对成长守护的核心启示是：<strong>防沉迷的下一战场是"情感诱导机制"而非单纯时长</strong>。当前我方防沉迷体系（时长限制、消费限额、人脸识别）主要解决"硬沉迷"，但乙女类游戏的"软性心理操控"通过剧情放大情感依赖、限时卡池制造稀缺焦虑来拉动充值，技术上不违规却实质伤害低龄用户。可评估的动作：① 在产品侧研究是否需要对"高情感诱导/虚拟亲密"类内容做额外的年龄分层与触达限制，尤其关注我方游戏中是否存在类似"恋爱互动+限定卡池"机制的未成年触达风险；② 将"情感依赖预警"纳入 AI 双引擎识别维度——不只识别游戏时长异常，也识别"单游戏高频情感向互动+异常充值"的组合信号；③ 对外沟通可把"软性心理操控"作为行业研究议题主动发声，体现成长守护的前瞻认知。</p><p><strong>事件二：广州互联网法院盲盒代拆3.8万案（国内）</strong></p><p>司法明确"未实名+未成年人大额消费=无效"的裁判口径，对成长守护的退款与实名核验体系是直接背书也是压力测试：① 复核我方"金融级人脸识别+实名核验"在直播/充值场景的覆盖完整性，确保冒用成人账号充值的识别与拦截能力经得起司法审视；② 此类判决强化了"平台未有效拦截即担责"的归责逻辑，建议把退款争议处理从"个案协商"升级为"标准化举证包"（游戏行为特征识别记录、拦截尝试日志），降低诉讼风险。</p><p><strong>事件三：Meta AI 无痕聊天（国际）</strong></p><p>Meta 的"隐私优先但削弱危机干预"设计，反向印证了国内《办法》"可干预优先"路径的合理性，对成长守护有两层价值：① 在对外沟通/行业交流中，可将"隐私保护与儿童安全问责如何平衡"作为我方 AI 能力（AI 双引擎、游戏内 AI 巡航）的设计原则亮点——我们选择在默认状态下保留必要的风险识别与干预能力；② 内审我方 AI 相关功能是否在任何"隐私模式"下丢失了对未成年人危险信号的识别能力，避免重蹈 Meta"私密即失察"的覆辙。</p></section>
+    <style>
+      .archive-section { margin-top:32px; }
+      .archive-item {
+        display:block; background:#fff;
+        border:1px solid #e2e8f0; border-left:3px solid #a78bfa;
+        border-radius:10px; padding:14px 18px;
+        text-decoration:none; color:inherit;
+        transition:border-left-color .2s, box-shadow .2s;
+      }
+      .archive-item:hover {
+        border-left-color:#7c3aed;
+        box-shadow:0 2px 8px rgba(124,58,237,.1);
+      }
+      .archive-item-date { font-size:15px; font-weight:700; color:#1a2e3d; margin-bottom:4px; }
+      .archive-item-summary { font-size:11px; color:#8ba3b5; line-height:1.4; }
+      .archive-empty { text-align:center; padding:20px; color:#8ba3b5; font-size:14px; }
+    </style>
+    <section class="archive-section">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+        <div style="flex:1;height:1px;background:linear-gradient(270deg,#7c3aed,#a78bfa);"></div>
+        <div style="font-size:15px;font-weight:700;letter-spacing:.06em;color:#5b21b0;white-space:nowrap;display:flex;align-items:center;gap:8px;">
+          <span style="display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;background:#7c3aed;border-radius:6px;font-size:12px;color:#fff;">📚</span>
+          历史存档
+        </div>
+        <div style="flex:1;height:1px;background:linear-gradient(90deg,#7c3aed,#a78bfa);"></div>
+      </div>
+      <div id="archiveList"></div>
+    </section>
+    <script>
+    (function(){
+      var wds=['周日','周一','周二','周三','周四','周五','周六'];
+      var cur='2026-08-13';
+      fetch('../reports-index.json?_='+Date.now())
+        .then(function(r){return r.json();})
+        .then(function(data){
+          var others=data.filter(function(d){return d.date!==cur;});
+          var el=document.getElementById('archiveList');
+          if(others.length===0){el.innerHTML='<div class="archive-empty">暂无更多历史报告</div>';return;}
+          var h='';
+          others.forEach(function(item){
+            var d=new Date(item.date+'T00:00:00');
+            var wd=wds[d.getDay()];
+            var sum=(item.summary||'').substring(0,60);
+            h+='<a class="archive-item" href="../reports/'+item.file+'">'
+              +'<div class="archive-item-date">'+item.date+' <span style="font-size:12px;color:#7c3aed;font-weight:600;">'+wd+'</span></div>'
+              +'<div class="archive-item-summary">'+sum+'</div>'
+              +'</a>';
+          });
+          el.innerHTML=h;
+        })
+        .catch(function(){});
+    })();
+    </script>
+  
+</div>
+
+<footer class="report-footer">
+  <p><strong>🛡️ 未成年人网络保护 · 每日动态日报</strong> | 2026-08-13 周四</p>
+  <p>覆盖：游戏 · 社交 · 直播 · 短视频 · 短剧 · 智能终端 · 网络消费 七大数字场景</p>
+  <p style="margin-top:8px;color:#b0b8c1;">数据来源：公开网络信息 · 由 WorkBuddy 自动化驱动</p>
+</footer>
+
+</body>
+</html>
